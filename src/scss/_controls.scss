@@ -1,0 +1,110 @@
+.controls {
+  --increase: 2.2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto 1em auto;
+}
+.replay-btn {
+  font-size: clamp(2.8rem, 9vw, 3.6rem);
+  color: var(--clr-primary);
+}
+
+.button-cover,
+.knobs,
+.layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.controller-tgl-btn {
+  position: relative;
+  width: calc(74px * var(--increase) - 4px);
+  height: 36px;
+  border-radius: 2px;
+}
+
+.checkbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.knobs {
+  z-index: 2;
+}
+
+.layer {
+  width: 100%;
+  background-color: var(--clr-bg-light);
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+.knobs:before,
+.knobs:after,
+.knobs span {
+  position: absolute;
+  top: 4px;
+  width: calc(20px * var(--increase));
+  height: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  padding: 9px calc(4px * var(--increase));
+  border-radius: 0.2em;
+  transition: 0.3s ease all;
+}
+
+/* coloured slide */
+.knobs:before {
+  content: "";
+  left: 4px; /* margin-left */
+  background-color: #03a9f4;
+}
+
+/* Minor text */
+.knobs:after {
+  content: "Minor";
+  right: 4px; /* margin right */
+  //color: var(--clr-primary);
+  top: 50%;
+  transform: translateY(-50%);
+  top: 16px;
+}
+
+/* Major text */
+.knobs span {
+  display: inline-block;
+  left: 4px; /* margin left */
+  //color: var(--clr-primary);
+  z-index: 1;
+  top: 2px;
+}
+
+/* .checkbox:checked + .knobs span {
+  //color: #4e4e4e;
+} */
+
+.checkbox:checked + .knobs:before {
+  left: calc(42px * var(--increase));
+  background-color: #f44336;
+}
+
+.checkbox:checked + .knobs:after {
+  color: var(--clr-primary);
+}
+
+/* .checkbox:checked ~ .layer {
+  background-color: var(--clr-bg-light);
+} */
