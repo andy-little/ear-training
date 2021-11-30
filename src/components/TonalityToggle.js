@@ -1,14 +1,16 @@
 import React from 'react'
+import { useEarTrainingContext } from '../EarTrainingContext'
 
 const TonalityToggle = () => {
-    return (
+  const {isMajor, setIsMajor} = useEarTrainingContext();
 
+    return (
         <div className="controller-tgl-btn">
-          <input type="checkbox" className="checkbox"/>
+          <input type="checkbox" className="checkbox" onClick={() =>{setIsMajor(!isMajor)}}/>
           <div className="knobs">
             <span>Major</span>
           </div>
-          <div class="layer"></div>
+          <div className="layer"></div>
         </div>
     )
 }

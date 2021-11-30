@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import './scss/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {EarTrainingContextProvider} from './EarTrainingContext';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <EarTrainingContextProvider>
+      <App />
+    </EarTrainingContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

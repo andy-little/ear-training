@@ -290,4 +290,32 @@ body {
 /* .checkbox:checked ~ .layer {
   background-color: var(--clr-bg-light);
 } */
+select {
+  margin-left: 1em;
+  background-color: var(--clr-bg-light);
+  border: 0.2em solid var(--clr-txt);
+  border: none;
+  border-radius: 6px;
+  padding: 0.3em 2em 0.3rem 0.3rem;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  color: var(--clr-txt);
+  font-size: clamp(0.9rem, 4vw, 1.1rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-transition: var(--transition-clr);
+  transition: var(--transition-clr);
+}
+
+select:focus {
+  /* border-color: var(--clr-seconday); */
+  color: var(--clr-primary);
+  outline: none;
+}
+
+label {
+  font-size: clamp(0.9rem, 4vw, 1.1rem);
+  color: var(--clr-txt);
+}
 /*# sourceMappingURL=index.css.map */
