@@ -5,9 +5,19 @@
   align-items: center;
   max-width: var(--max-width);
   margin: 0 auto 1em auto;
+  color: var(--clr-bg);
 }
+
+.pick-key select {
+  margin-left: 0;
+  width: 6rem;
+}
+.pick-key label {
+  display: none;
+}
+
 .replay-btn {
-  font-size: clamp(2.8rem, 9vw, 3.6rem);
+  font-size: clamp(2.6rem, 7.5vw, 3.2rem);
   color: var(--clr-primary);
   transition: transform 100ms linear, opacity 250ms linear;
   &:hover {
@@ -26,13 +36,13 @@
   right: 0;
   bottom: 0;
   left: 0;
+  border-radius: var(--boarder-r);
 }
 
 .controller-tgl-btn {
   position: relative;
-  width: calc(74px * var(--increase) - 4px);
+  width: calc(74px * var(--increase) - 24px); //-4
   height: 36px;
-  border-radius: 2px;
 }
 
 .checkbox {
@@ -54,7 +64,6 @@
   width: 100%;
   background-color: var(--clr-bg-light);
   transition: 0.3s ease all;
-  z-index: 1;
 }
 
 .knobs:before,
@@ -69,7 +78,7 @@
   text-align: center;
   line-height: 1;
   padding: 9px calc(4px * var(--increase));
-  border-radius: 0.2em;
+  border-radius: var(--boarder-r);
   transition: 0.3s ease all;
 }
 
@@ -77,14 +86,13 @@
 .knobs:before {
   content: "";
   left: 4px; /* margin-left */
-  background-color: #03a9f4;
+  background-color: var(--clr-secondary);
 }
 
 /* Minor text */
 .knobs:after {
   content: "Minor";
   right: 4px; /* margin right */
-  //color: var(--clr-primary);
   top: 50%;
   transform: translateY(-50%);
   top: 16px;
@@ -94,24 +102,25 @@
 .knobs span {
   display: inline-block;
   left: 4px; /* margin left */
-  //color: var(--clr-primary);
   z-index: 1;
   top: 2px;
 }
 
-/* .checkbox:checked + .knobs span {
-  //color: #4e4e4e;
-} */
-
 .checkbox:checked + .knobs:before {
-  left: calc(42px * var(--increase));
-  background-color: #f44336;
+  left: calc(42px * var(--increase) - 20px);
+  background-color: var(--clr-tertiary);
 }
 
 .checkbox:checked + .knobs:after {
-  color: var(--clr-primary);
+  color: var(--clr-bg);
 }
 
-/* .checkbox:checked ~ .layer {
-  background-color: var(--clr-bg-light);
-} */
+/* desktop */
+@media only screen and (min-width: 30rem) {
+  .pick-key select {
+    margin-left: 1em;
+  }
+  .pick-key label {
+    display: inline;
+  }
+}
