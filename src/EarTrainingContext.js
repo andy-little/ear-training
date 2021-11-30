@@ -9,8 +9,9 @@ export const EarTrainingContextProvider = ({children}) => {
     const [keyOptions, setKeyOptions] = useState(['C', 'D', 'G']);
     const [key_, setKey_] = useState('');
     const [isMajor, setIsMajor] = useState(true);
-    const [numQs, setNumQs] = useState(0)
-    const [score, setScore] = useState(0)
+    const [numQs, setNumQs] = useState(0);
+    const [score, setScore] = useState(0);
+    const [isHelpOpen, setIsHelpOpen] = useState(false);
 
     useEffect(() => {
         if(isMajor === true){
@@ -31,7 +32,9 @@ export const EarTrainingContextProvider = ({children}) => {
             numQs, 
             setNumQs, 
             score, 
-            setScore
+            setScore,
+            isHelpOpen,
+            setIsHelpOpen
         }}>
             {children}
         </EarTrainingContext.Provider>

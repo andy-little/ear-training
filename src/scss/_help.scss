@@ -1,0 +1,23 @@
+.help-modal {
+  position: absolute;
+  background-color: var(--clr-bg-light);
+  color: var(--clr-primary);
+  opacity: 0;
+  pointer-events: none;
+  padding: 1em 2em;
+  border-radius: var(--border-r);
+  width: 80%;
+  max-width: 30rem;
+  left: 50%;
+  top: 25%;
+
+  transform: translate(-50%, -25%);
+  transition: opacity 150ms linear;
+
+  &.show,
+  &:active {
+    opacity: 1;
+    z-index: 100;
+    pointer-events: default;
+  }
+}

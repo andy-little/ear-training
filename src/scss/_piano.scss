@@ -65,7 +65,7 @@ li {
   }
   &:active .text-black {
     transform: scale(0.99);
-    color: var(--boarder-r);
+    color: var(--border-r);
     opacity: 0.9;
   }
 }
@@ -95,8 +95,9 @@ li {
 
 .text-black {
   font-size: 0.9em;
-  font-size: clamp(0.7em, 2.7vw, 1.3em);
+  font-size: clamp(0.65em, 2.7vw, 1.1em);
   font-weight: 500;
+  line-height: 1.2;
   margin-bottom: 1.1em;
   color: var(--clr-primary);
   user-select: none;

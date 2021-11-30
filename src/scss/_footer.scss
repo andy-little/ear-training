@@ -1,0 +1,25 @@
+.ear-trainer-footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.score {
+  &-container {
+    width: fit-content;
+    border-radius: var(--border-r);
+    background-color: var(--clr-bg-light);
+    margin: clamp(0.6em, 3vh, 1.5em) 0 0 auto;
+  }
+
+  &-text {
+    padding: 0.5em 1.5em;
+    margin: 0;
+  }
+}
+
+.footer-help {
+  font-size: clamp(1em, 4vw, 1.7em);
+  color: var(--clr-primary);
+}

@@ -36,7 +36,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  border-radius: var(--boarder-r);
+  border-radius: var(--border-r);
 }
 
 .controller-tgl-btn {
@@ -78,7 +78,7 @@
   text-align: center;
   line-height: 1;
   padding: 9px calc(4px * var(--increase));
-  border-radius: var(--boarder-r);
+  border-radius: var(--border-r);
   transition: 0.3s ease all;
 }
 

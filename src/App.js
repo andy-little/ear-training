@@ -1,16 +1,22 @@
 import Controls from "./components/Controls";
 import Piano from "./components/Piano";
-import Score from "./components/Score";
+import EarTrainerFooter from "./components/EarTrainerFooter";
+import HelpModal from "./components/HelpModal";
+
+
 
 function App() {
   return (
     <>
 
+      
       <section className="ear-trainer">
         <Controls/>
         <Piano/>
-        <Score/>
+        
+      <EarTrainerFooter/>
       </section>
+      
     </>
   );
 }

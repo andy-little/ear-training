@@ -87,7 +87,7 @@ li {
 .black:active .text-black {
   -webkit-transform: scale(0.99);
           transform: scale(0.99);
-  color: var(--boarder-r);
+  color: var(--border-r);
   opacity: 0.9;
 }
 
@@ -121,8 +121,9 @@ li {
 
 .text-black {
   font-size: 0.9em;
-  font-size: clamp(0.7em, 2.7vw, 1.3em);
+  font-size: clamp(0.65em, 2.7vw, 1.1em);
   font-weight: 500;
+  line-height: 1.2;
   margin-bottom: 1.1em;
   color: var(--clr-primary);
   -webkit-user-select: none;
@@ -141,12 +142,13 @@ body {
   background: var(--clr-bg);
   font-family: Arial, Helvetica, sans-serif;
   color: var(--clr-txt);
+  padding: 1em;
+  line-height: 1.6;
 }
 
 .ear-trainer {
   max-width: 140vh;
   margin: 0 auto;
-  padding: 1em;
 }
 
 :root {
@@ -157,7 +159,7 @@ body {
   --clr-tertiary: #94dcec;
   --clr-txt: rgb(255, 247, 236);
   --max-width: 56rem;
-  --boarder-r: 0.4rem;
+  --border-r: 0.4rem;
 }
 
 .controls {
@@ -211,7 +213,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  border-radius: var(--boarder-r);
+  border-radius: var(--border-r);
 }
 
 .controller-tgl-btn {
@@ -254,7 +256,7 @@ body {
   text-align: center;
   line-height: 1;
   padding: 9px calc(4px * var(--increase));
-  border-radius: var(--boarder-r);
+  border-radius: var(--border-r);
   -webkit-transition: 0.3s ease all;
   transition: 0.3s ease all;
 }
@@ -339,16 +341,22 @@ label {
   color: var(--clr-txt);
 }
 
-.score {
+.ear-trainer-footer {
   max-width: var(--max-width);
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .score-container {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  border-radius: var(--boarder-r);
+  border-radius: var(--border-r);
   background-color: var(--clr-bg-light);
   margin: clamp(0.6em, 3vh, 1.5em) 0 0 auto;
 }
@@ -356,5 +364,34 @@ label {
 .score-text {
   padding: 0.5em 1.5em;
   margin: 0;
+}
+
+.footer-help {
+  font-size: clamp(1em, 4vw, 1.7em);
+  color: var(--clr-primary);
+}
+
+.help-modal {
+  position: absolute;
+  background-color: var(--clr-bg-light);
+  color: var(--clr-primary);
+  opacity: 0;
+  pointer-events: none;
+  padding: 1em 2em;
+  border-radius: var(--border-r);
+  width: 80%;
+  max-width: 30rem;
+  left: 50%;
+  top: 25%;
+  -webkit-transform: translate(-50%, -25%);
+          transform: translate(-50%, -25%);
+  -webkit-transition: opacity 150ms linear;
+  transition: opacity 150ms linear;
+}
+
+.help-modal.show, .help-modal:active {
+  opacity: 1;
+  z-index: 100;
+  pointer-events: default;
 }
 /*# sourceMappingURL=index.css.map */
