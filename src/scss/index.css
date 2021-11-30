@@ -151,7 +151,7 @@ body {
 
 :root {
   --clr-bg: rgb(20, 27, 32);
-  --clr-bg-light: rgb(36, 49, 58);
+  --clr-bg-light: rgb(47, 63, 75);
   --clr-primary: #faebd7;
   --clr-secondary: #ffbdd6;
   --clr-tertiary: #94dcec;
@@ -186,7 +186,7 @@ body {
 }
 
 .replay-btn {
-  font-size: clamp(2.6rem, 7.5vw, 3.2rem);
+  font-size: clamp(2.2rem, 7.5vw, 2.8rem);
   color: var(--clr-primary);
   -webkit-transition: opacity 250ms linear, -webkit-transform 100ms linear;
   transition: opacity 250ms linear, -webkit-transform 100ms linear;
@@ -285,6 +285,10 @@ body {
   /* margin left */
   z-index: 1;
   top: 2px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .checkbox:checked + .knobs:before {
@@ -333,5 +337,24 @@ select:focus {
 label {
   font-size: clamp(0.9rem, 4vw, 1.1rem);
   color: var(--clr-txt);
+}
+
+.score {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.score-container {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: var(--boarder-r);
+  background-color: var(--clr-bg-light);
+  margin: clamp(0.6em, 3vh, 1.5em) 0 0 auto;
+}
+
+.score-text {
+  padding: 0.5em 1.5em;
+  margin: 0;
 }
 /*# sourceMappingURL=index.css.map */

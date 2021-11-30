@@ -1,5 +1,6 @@
 import Controls from "./components/Controls";
 import Piano from "./components/Piano";
+import Score from "./components/Score";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <section className="ear-trainer">
         <Controls/>
         <Piano/>
+        <Score/>
       </section>
     </>
   );
