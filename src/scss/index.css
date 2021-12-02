@@ -65,6 +65,10 @@ li {
   color: black;
 }
 
+.white.inactive {
+  opacity: 0.6;
+}
+
 .black {
   height: 60%;
   width: var(--black-key-width);
@@ -85,10 +89,14 @@ li {
 }
 
 .black:active .text-black {
-  -webkit-transform: scale(0.99);
-          transform: scale(0.99);
+  -webkit-transform: scale(0.985);
+          transform: scale(0.985);
   color: var(--border-r);
   opacity: 0.9;
+}
+
+.black.inactive {
+  opacity: 0.7;
 }
 
 .d,
@@ -343,7 +351,7 @@ label {
 
 .ear-trainer-footer {
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: clamp(0.6em, 3vh, 1.5em) auto 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -352,13 +360,50 @@ label {
           align-items: center;
 }
 
+.note-selector-btn {
+  font-size: clamp(1.2rem, 7.5vw, 2.4rem);
+  color: var(--clr-bg);
+  overflow: visible;
+  border-radius: var(--border-r);
+  border-radius: 50%;
+  padding: 0.1em;
+  background-color: var(--clr-primary);
+  margin-left: 2vw;
+  -webkit-transition: opacity 250ms linear, -webkit-transform 100ms linear;
+  transition: opacity 250ms linear, -webkit-transform 100ms linear;
+  transition: transform 100ms linear, opacity 250ms linear;
+  transition: transform 100ms linear, opacity 250ms linear, -webkit-transform 100ms linear;
+}
+
+.note-selector-btn:hover {
+  opacity: 0.85;
+}
+
+.replay-btn {
+  font-size: clamp(2.2rem, 7.5vw, 2.8rem);
+  color: var(--clr-primary);
+  -webkit-transition: opacity 250ms linear, -webkit-transform 100ms linear;
+  transition: opacity 250ms linear, -webkit-transform 100ms linear;
+  transition: transform 100ms linear, opacity 250ms linear;
+  transition: transform 100ms linear, opacity 250ms linear, -webkit-transform 100ms linear;
+}
+
+.replay-btn:hover {
+  opacity: 0.85;
+}
+
+.replay-btn:active {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 .score-container {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   border-radius: var(--border-r);
   background-color: var(--clr-bg-light);
-  margin: clamp(0.6em, 3vh, 1.5em) 0 0 auto;
+  margin: 0 0 0 auto;
 }
 
 .score-text {
