@@ -1,18 +1,16 @@
 import React from 'react'
 import Score from "./Score";
-import {MdOutlineHelp} from 'react-icons/md'
-import { useEarTrainingContext } from '../EarTrainingContext';
-import HelpModal from './HelpModal';
+import {GiMusicalNotes} from 'react-icons/gi'
+import {MdOutlineReplayCircleFilled} from 'react-icons/md'
 
 const EarTrainerFooter = () => {
-    const {isHelpOpen, setIsHelpOpen} = useEarTrainingContext();
     return (
    <footer className="ear-trainer-footer">
-        <div>
-        
-            <MdOutlineHelp className="footer-help" onMouseEnter={()=>{setIsHelpOpen(true)}} onMouseLeave={()=>{setIsHelpOpen(false)}}/>
-            <HelpModal/>
-        </div>
+    
+        <MdOutlineReplayCircleFilled className="replay-btn"/>
+            
+
+        <GiMusicalNotes className="note-selector-btn"/>
         <Score/>
     </footer>
     )

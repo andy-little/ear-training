@@ -1,8 +1,36 @@
 .ear-trainer-footer {
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: clamp(0.6em, 3vh, 1.5em) auto 0 auto;
   display: flex;
+
   align-items: center;
+}
+
+.note-selector-btn {
+  font-size: clamp(1.2rem, 7.5vw, 2.4rem);
+  color: var(--clr-bg);
+  overflow: visible;
+  border-radius: var(--border-r);
+  border-radius: 50%;
+  padding: 0.1em;
+  background-color: var(--clr-primary);
+  margin-left: 2vw;
+
+  transition: transform 100ms linear, opacity 250ms linear;
+  &:hover {
+    opacity: 0.85;
+  }
+}
+.replay-btn {
+  font-size: clamp(2.2rem, 7.5vw, 2.8rem);
+  color: var(--clr-primary);
+  transition: transform 100ms linear, opacity 250ms linear;
+  &:hover {
+    opacity: 0.85;
+  }
+  &:active {
+    transform: rotate(180deg);
+  }
 }
 
 .score {
@@ -10,7 +38,7 @@
     width: fit-content;
     border-radius: var(--border-r);
     background-color: var(--clr-bg-light);
-    margin: clamp(0.6em, 3vh, 1.5em) 0 0 auto;
+    margin: 0 0 0 auto;
   }
 
   &-text {
