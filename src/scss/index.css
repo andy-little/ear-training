@@ -1,5 +1,4 @@
 .piano-container {
-  --black-key-width: 8%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -168,6 +167,7 @@ body {
   --clr-txt: rgb(255, 247, 236);
   --max-width: 56rem;
   --border-r: 0.4rem;
+  --black-key-width: 8%;
 }
 
 .controls {
