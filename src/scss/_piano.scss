@@ -46,6 +46,9 @@ li {
     transform: scale(0.97);
     color: rgb(0, 0, 0);
   }
+  &.inactive {
+    opacity: 0.6;
+  }
 }
 
 .black {
@@ -64,9 +67,12 @@ li {
     background: linear-gradient(to right, #333 0%, #222 100%);
   }
   &:active .text-black {
-    transform: scale(0.99);
+    transform: scale(0.985);
     color: var(--border-r);
     opacity: 0.9;
+  }
+  &.inactive {
+    opacity: 0.7;
   }
 }
 
