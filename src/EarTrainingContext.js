@@ -1,13 +1,22 @@
+import {Notes} from './controller/Notes'
 import {useContext, useState, useEffect, createContext} from "react";
 import { keys } from "./data/keys";
 import {AudioPlayer} from './controller/AudioPlayer';
 
 const EarTrainingContext = createContext()
+const notes = new Notes();
+const player = new AudioPlayer();
 
 export const EarTrainingContextProvider = ({children}) => {
+
+
     const [keyOptions, setKeyOptions] = useState([]);
     const [isMajor, setIsMajor] = useState(true);
     const [key_, setKey_] = useState('');
+
+    const [noteOptions, setNoteOptions] = useState(notes);
+    const [question, setQuestion] = useState('');
+
     const [numQs, setNumQs] = useState(0);
     const [score, setScore] = useState(0);
     const [isHelpOpen, setIsHelpOpen] = useState(false);
@@ -40,9 +49,15 @@ export const EarTrainingContextProvider = ({children}) => {
         });
     }, [isMajor])
     useEffect(() => {
-        console.count('play')
-        const player = new AudioPlayer();
-        player.playCadence(key_);
+        const randomNote = notes.random();
+        setQuestion(randomNote);
+        console.count('play');
+        player.playCadence(key_).then(_ => player.playNote(question));
+
+        /*
+        Problem, the components state is always one ahead of the note that is played
+        */
+        
         
     }, [key_])
     return (
@@ -58,7 +73,10 @@ export const EarTrainingContextProvider = ({children}) => {
             score, 
             setScore,
             isHelpOpen,
-            setIsHelpOpen
+            setIsHelpOpen,
+            noteOptions,
+            setNoteOptions,
+            question
         }}>
             {children}
         </EarTrainingContext.Provider>

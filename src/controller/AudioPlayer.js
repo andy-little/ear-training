@@ -1,20 +1,29 @@
 import {Cadences} from '../data/Cadences'
+import {NoteAudio} from '../data/NoteAudio'
 export class AudioPlayer{
 
     constructor(){
         
     }
-    static playNote(note){
-       
+    playNote(note){
+        const noteAudio = new NoteAudio();
+        const player = new Audio(noteAudio[note]);
+        player.play();
+        console.log(`played note ${note}`);
     }
     playCadence(key){
-        const cadences = new Cadences();
-        const cadence = new Audio(cadences[key]);
-        try {
-            cadence.play();
-            
-        } catch (error) {
-            console.error(error)
-        }
+        
+        
+       
+        return new Promise((resolve, reject)=>{
+            const cadences = new Cadences();
+            const player = new Audio(cadences[key]);
+            player.onended = (e)=>{
+                resolve(`played cadence ${key}`)
+                console.log(`played cadence ${key}`)
+            };
+            player.play();
+
+        })
     }
 }

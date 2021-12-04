@@ -1,4 +1,4 @@
-class Notes {
+export class Notes {
     alphabet = [
         'an2', 'as2', 'bn2', 'cn2', 'cs2', 'dn2', 'ds2', 'en2', 'fn2', 'fs2', 'gn2', 'gs2',
         'an3', 'as3', 'bn3', 'cn3', 'cs3', 'dn3', 'ds3', 'en3', 'fn3', 'fs3', 'gn3', 'gs3'
