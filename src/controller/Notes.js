@@ -1,18 +1,21 @@
 class Notes {
     alphabet = [
-        'an-2', 'as-2', 'bn-2', 'cn-2', 'cs-2', 'dn-2', 'ds-2', 'en-2', 'fn-2', 'fs-2', 'gn-2', 'gs-2',
-        'an-3', 'as-3', 'bn-3', 'cn-3', 'cs-3', 'dn-3', 'ds-3', 'en-3', 'fn-3', 'fs-3', 'gn-3', 'gs-3'
+        'an2', 'as2', 'bn2', 'cn2', 'cs2', 'dn2', 'ds2', 'en2', 'fn2', 'fs2', 'gn2', 'gs2',
+        'an3', 'as3', 'bn3', 'cn3', 'cs3', 'dn3', 'ds3', 'en3', 'fn3', 'fs3', 'gn3', 'gs3'
     ];
     octaves = ['2', '3'];
     constructor(){
             this.notes = this.alphabet;          
         }
         
+    ///    
     random(){
         /* this might belong to another class */
         const num = Math.floor(Math.random() * this.notes.length);
         return this.notes[num];
     }
+    ///
+
     setAll(){
         this.notes = this.alphabet;
     }
@@ -36,7 +39,7 @@ class Notes {
         }
 
         for(let octave of this.octaves){
-            this.notes.push(`${addNote}-${octave}`);
+            this.notes.push(`${addNote}${octave}`);
         }
     }
 

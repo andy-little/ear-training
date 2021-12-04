@@ -1,5 +1,6 @@
 import {useContext, useState, useEffect, createContext} from "react";
 import { keys } from "./data/keys";
+import {AudioPlayer} from './controller/AudioPlayer';
 
 const EarTrainingContext = createContext()
 
@@ -38,6 +39,12 @@ export const EarTrainingContextProvider = ({children}) => {
             }
         });
     }, [isMajor])
+    useEffect(() => {
+        console.count('play')
+        const player = new AudioPlayer();
+        player.playCadence(key_);
+        
+    }, [key_])
     return (
         <EarTrainingContext.Provider value={{
             keyOptions, 

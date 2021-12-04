@@ -9,14 +9,12 @@
 .note-selector-btn {
   font-size: clamp(1.2rem, 7.5vw, 2.4rem);
   color: var(--clr-bg);
-  overflow: visible;
-  border-radius: var(--border-r);
   border-radius: 50%;
-  padding: 0.1em;
+  padding: 0.15em;
   background-color: var(--clr-primary);
   margin-left: 2vw;
-
   transition: transform 100ms linear, opacity 250ms linear;
+  overflow: visible;
   &:hover {
     opacity: 0.85;
   }

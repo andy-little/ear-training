@@ -16,18 +16,6 @@
   display: none;
 }
 
-.replay-btn {
-  font-size: clamp(2.2rem, 7.5vw, 2.8rem);
-  color: var(--clr-primary);
-  transition: transform 100ms linear, opacity 250ms linear;
-  &:hover {
-    opacity: 0.85;
-  }
-  &:active {
-    transform: rotate(180deg);
-  }
-}
-
 .button-cover,
 .knobs,
 .layer {
