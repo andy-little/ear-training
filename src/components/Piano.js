@@ -3,18 +3,28 @@ import { useEarTrainingContext } from '../EarTrainingContext'
 
 const Piano = () => {
 
-    const{setScore, setNumQs, question} = useEarTrainingContext();
+    const {setScore, setNumQs, question} = useEarTrainingContext();
 
-    const onKeyPress = (e) =>{
-        /* console.log(question);
-        console.log(e.target.dataset.note); */
+
+    function onKeyPress(e){
+        
         if(e.target.dataset.note === question.slice(0,2)){
             setScore(prevState => prevState += 1);
             setNumQs(prevState => prevState += 1);
+            answerColour(e, 'correct')
         }else{
             setNumQs(prevState => prevState += 1);
+            answerColour(e, 'incorrect')
         }
     }
+
+    function answerColour(e, status){
+            e.target.classList.add(status);
+            setTimeout(()=>{
+                e.target.classList.remove(status);
+            },600);
+        }
+    
 
     return (
         <div className="piano-container">

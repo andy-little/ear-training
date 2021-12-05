@@ -8,14 +8,14 @@ import HelpModal from "./components/HelpModal";
 function App() {
   return (
     <>
+<div className="ear-trainer-container">
 
-      
       <section className="ear-trainer">
         <Controls/>
         <Piano/>
-        
-      <EarTrainerFooter/>
+        <EarTrainerFooter/>
       </section>
+</div>
       
     </>
   );
