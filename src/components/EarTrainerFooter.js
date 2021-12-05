@@ -8,10 +8,7 @@ const EarTrainerFooter = () => {
     const {replayQuestion} = useEarTrainingContext();
     return (
    <footer className="ear-trainer-footer">
-    
         <MdOutlineReplayCircleFilled className="replay-btn" onClick={replayQuestion}/>
-            
-
         <GiMusicalNotes className="note-selector-btn"/>
         <Score/>
     </footer>

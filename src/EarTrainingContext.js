@@ -58,11 +58,6 @@ export const EarTrainingContextProvider = ({children}) => {
         playQuestion();        
     }, [key_, numQs]);
 
-   /*  useEffect(() => {      
-        playQuestion();      
-    }, [numQs]); */
-
-
 
     return (
         <EarTrainingContext.Provider value={{

@@ -22,10 +22,13 @@ const Piano = () => {
     function answerColour(elm, status){
         /* changes colour of keys to indicate if correct or incorrect */
         /* should recieve an element and a string of incorrect or correct */
-        elm.classList.add(status);
         setTimeout(()=>{
-            elm.classList.remove(status);
-        },900);
+
+            elm.classList.add(status);
+            setTimeout(()=>{
+                elm.classList.remove(status);
+            },900);
+        },75)
         }
 
     function onKeyPress(e){
