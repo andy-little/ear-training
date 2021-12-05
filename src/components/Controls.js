@@ -6,7 +6,7 @@ import TonalityToggle from './TonalityToggle'
 import HelpModal from './HelpModal';
 
 const Controls = () => {
-    const {keyOptions, key_, setKey_, isHelpOpen, setIsHelpOpen} = useEarTrainingContext();
+    const {keyOptions, key_, setKey_, setIsHelpOpen} = useEarTrainingContext();
    /*  console.log(key); */
     return (
         <div className="controls">

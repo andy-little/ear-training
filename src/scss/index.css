@@ -48,8 +48,6 @@ li {
           box-shadow: -1px 0 0 rgba(255, 255, 255, 0.8) inset, 0 0 4px #ccc inset, 0 0 2px rgba(39, 39, 39, 0.2);
   background: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#fff));
   background: linear-gradient(to bottom, #fafafa 0%, #fff 100%);
-  -webkit-transition: background 300ms linear;
-  transition: background 300ms linear;
 }
 
 .white:active {
@@ -79,8 +77,6 @@ li {
   -webkit-box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.2) inset, 0 -5px 2px 3px rgba(0, 0, 0, 0.6) inset, 0 2px 4px rgba(0, 0, 0, 0.5);
           box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.2) inset, 0 -5px 2px 3px rgba(0, 0, 0, 0.6) inset, 0 2px 4px rgba(0, 0, 0, 0.5);
   background: linear-gradient(45deg, #222 0%, #333 100%);
-  -webkit-transition: background 300ms linear;
-  transition: background 300ms linear;
 }
 
 .black:active {
@@ -447,5 +443,62 @@ label {
   opacity: 1;
   z-index: 100;
   pointer-events: default;
+}
+
+.start-modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  z-index: 500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.start-modal::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-bg);
+  opacity: 0.8;
+  display: block;
+}
+
+.start-modal-bg {
+  z-index: 600;
+  position: absolute;
+  background-color: var(--clr-tertiary);
+  border-radius: var(--border-r);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  -webkit-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+
+.start-modal-bg:hover {
+  background-color: var(--clr-secondary);
+}
+
+.start-modal-play-btn {
+  font-size: clamp(5rem, 40vw, 12rem);
+  color: var(--clr-bg-light);
 }
 /*# sourceMappingURL=index.css.map */

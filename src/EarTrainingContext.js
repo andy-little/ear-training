@@ -8,11 +8,10 @@ const notes = new Notes();
 const player = new AudioPlayer();
 
 export const EarTrainingContextProvider = ({children}) => {        
-    const [isMounted, setIsMounted] = useState(false)
 
     const [keyOptions, setKeyOptions] = useState([]);
     const [isMajor, setIsMajor] = useState(true);
-    const [key_, setKey_] = useState('C');
+    const [key_, setKey_] = useState('');
 
     const [noteOptions, setNoteOptions] = useState(notes);
     const [question, setQuestion] = useState(notes.random());
@@ -20,13 +19,12 @@ export const EarTrainingContextProvider = ({children}) => {
     const [numQs, setNumQs] = useState(0);
     const [score, setScore] = useState(0);
     const [isHelpOpen, setIsHelpOpen] = useState(false);
+    const [isStartOpen, setIsStartOpen] = useState(true);
 
     function playQuestion() {
         const randomNote = notes.random();
         setQuestion(randomNote);
         player.playCadence(key_).then((_) => {
-            /* console.log(`state: ${question}`);
-            console.log(`var: ${randomNote}`); */
             player.playNote(randomNote);
         }).catch(err => console.log(err));
     }
@@ -40,7 +38,6 @@ export const EarTrainingContextProvider = ({children}) => {
             const minorKeys = keys.map(item => item.minor)
             setKeyOptions(minorKeys);
         }
-        if(isMounted){
             
             setKey_((oldState)=>{
                 keys.forEach(({major, minor})=>{ 
@@ -51,21 +48,15 @@ export const EarTrainingContextProvider = ({children}) => {
                     }
                 });
             });
-        };
     }, [isMajor])
     useEffect(() => {
-        if(isMounted){
-            playQuestion();        
-        }
+        playQuestion();        
     }, [key_, numQs]);
 
    /*  useEffect(() => {      
         playQuestion();      
     }, [numQs]); */
 
-    useEffect(() => {
-        setIsMounted(true);
-    }, []);
 
 
     return (
@@ -85,6 +76,8 @@ export const EarTrainingContextProvider = ({children}) => {
             noteOptions,
             setNoteOptions,
             question,
+            isStartOpen, 
+            setIsStartOpen
         }}>
             {children}
         </EarTrainingContext.Provider>
