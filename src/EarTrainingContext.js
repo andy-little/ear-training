@@ -28,6 +28,11 @@ export const EarTrainingContextProvider = ({children}) => {
             player.playNote(randomNote);
         }).catch(err => console.log(err));
     }
+    function replayQuestion() {
+        player.playCadence(key_).then((_) => {
+            player.playNote(question);
+        }).catch(err => console.log(err));
+    }
 
 
     useEffect(() => {
@@ -77,7 +82,8 @@ export const EarTrainingContextProvider = ({children}) => {
             setNoteOptions,
             question,
             isStartOpen, 
-            setIsStartOpen
+            setIsStartOpen,
+            replayQuestion
         }}>
             {children}
         </EarTrainingContext.Provider>
