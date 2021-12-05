@@ -16,14 +16,18 @@ export class AudioPlayer{
         
        
         return new Promise((resolve, reject)=>{
-            const cadences = new Cadences();
-            const player = new Audio(cadences[key]);
-            player.onended = (e)=>{
-                resolve(`played cadence ${key}`)
-                console.log(`played cadence ${key}`)
-            };
-            player.play();
+            try {
+                const cadences = new Cadences();
+                const player = new Audio(cadences[key]);
+                player.onended = (e)=>{
+                    resolve(`played cadence ${key}`)
+                    console.log(`played cadence ${key}`)
+                };
+                player.play();
+            } catch (error) {
+                reject(error);
+            }
 
-        })
+        });
     }
 }

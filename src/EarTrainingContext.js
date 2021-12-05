@@ -7,19 +7,30 @@ const EarTrainingContext = createContext()
 const notes = new Notes();
 const player = new AudioPlayer();
 
-export const EarTrainingContextProvider = ({children}) => {
-
+export const EarTrainingContextProvider = ({children}) => {        
+    const [isMounted, setIsMounted] = useState(false)
 
     const [keyOptions, setKeyOptions] = useState([]);
     const [isMajor, setIsMajor] = useState(true);
-    const [key_, setKey_] = useState('');
+    const [key_, setKey_] = useState('C');
 
     const [noteOptions, setNoteOptions] = useState(notes);
-    const [question, setQuestion] = useState('');
+    const [question, setQuestion] = useState(notes.random());
 
     const [numQs, setNumQs] = useState(0);
     const [score, setScore] = useState(0);
     const [isHelpOpen, setIsHelpOpen] = useState(false);
+
+    function playQuestion() {
+        const randomNote = notes.random();
+        setQuestion(randomNote);
+        player.playCadence(key_).then((_) => {
+            /* console.log(`state: ${question}`);
+            console.log(`var: ${randomNote}`); */
+            player.playNote(randomNote);
+        }).catch(err => console.log(err));
+    }
+
 
     useEffect(() => {
         if(isMajor === true){
@@ -29,37 +40,34 @@ export const EarTrainingContextProvider = ({children}) => {
             const minorKeys = keys.map(item => item.minor)
             setKeyOptions(minorKeys);
         }
-        setKey_((oldState)=>{
-            keys.forEach(({major, minor})=>{ 
-                if(major === oldState){
-                    setKey_(minor);
-                }else if(minor === oldState){
-                    setKey_(major);
-                }
-            })
-
-            if(!key_){
-                /* poor code to get around useEffect 
-                running on initial render 
-                seems to work though.
-                */
-
-                setKey_('C')
-            }
-        });
+        if(isMounted){
+            
+            setKey_((oldState)=>{
+                keys.forEach(({major, minor})=>{ 
+                    if(major === oldState){
+                        setKey_(minor);
+                    }else if(minor === oldState){
+                        setKey_(major);
+                    }
+                });
+            });
+        };
     }, [isMajor])
     useEffect(() => {
-        const randomNote = notes.random();
-        setQuestion(randomNote);
-        console.count('play');
-        player.playCadence(key_).then(_ => player.playNote(question));
+        if(isMounted){
+            playQuestion();        
+        }
+    }, [key_, numQs]);
 
-        /*
-        Problem, the components state is always one ahead of the note that is played
-        */
-        
-        
-    }, [key_])
+   /*  useEffect(() => {      
+        playQuestion();      
+    }, [numQs]); */
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+
     return (
         <EarTrainingContext.Provider value={{
             keyOptions, 
@@ -76,7 +84,7 @@ export const EarTrainingContextProvider = ({children}) => {
             setIsHelpOpen,
             noteOptions,
             setNoteOptions,
-            question
+            question,
         }}>
             {children}
         </EarTrainingContext.Provider>

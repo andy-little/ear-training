@@ -45,9 +45,3 @@ export class Notes {
 
 }
 
-const n = new Notes();
-n.removeAll();
-n.addNote('an');
-n.addNote('bn');
-console.log(n.notes);
-
