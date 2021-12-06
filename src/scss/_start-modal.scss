@@ -29,11 +29,15 @@
     transition: background-color 250ms linear;
     &:hover {
       background-color: var(--clr-secondary);
+      .start-modal-play-btn {
+        opacity: 0.9;
+      }
     }
   }
   &-play-btn {
     font-size: clamp(5rem, 40vw, 12rem);
     color: var(--clr-bg-light);
+    transition: opacity 250ms linear;
     //background-color: var(--clr-bg-light);
   }
 }

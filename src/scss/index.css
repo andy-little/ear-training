@@ -497,8 +497,47 @@ label {
   background-color: var(--clr-secondary);
 }
 
+.start-modal-bg:hover .start-modal-play-btn {
+  opacity: 0.9;
+}
+
 .start-modal-play-btn {
   font-size: clamp(5rem, 40vw, 12rem);
   color: var(--clr-bg-light);
+  -webkit-transition: opacity 250ms linear;
+  transition: opacity 250ms linear;
+}
+
+.select-notes-modal {
+  min-width: 18rem;
+  padding: 0.5em 1em;
+  border: 0.2em solid var(--clr-primary);
+  border-radius: var(--border-r);
+  background-color: var(--clr-bg-light);
+}
+
+.select-notes-modal label {
+  display: inline-block;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  width: 1.65rem;
+}
+
+input.select-notes-checkboxes-note-box {
+  width: clamp(1rem, 3vw, 1.2rem);
+  height: clamp(1rem, 3vw, 1.2rem);
+  background-color: pink;
+  border-radius: 8px;
+}
+
+.select-notes-checkboxes {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(4.5rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(4.5rem, 1fr));
+  margin-top: 1rem;
+}
+
+.select-notes-checkboxes-note-container {
+  display: inline;
 }
 /*# sourceMappingURL=index.css.map */
