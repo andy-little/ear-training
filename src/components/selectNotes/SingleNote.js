@@ -16,10 +16,12 @@ const SingleNote = ({name, data}) => {
         setIsChecked(!isChecked);
     }
     return (
-        <div className="select-notes-checkboxes-note-container" >
-            <label htmlFor={data}>{name}</label>
-            <input className="select-notes-checkboxes-note-box" type="checkbox" checked={isChecked} name={data} id={data} onChange={handleChange}/>
-        </div>
+       
+        <label className="select-notes-checkboxes-container" htmlFor={data}>{name}
+            <input className="select-notes-checkboxes-box" type="checkbox" checked={isChecked} name={data} id={data} onChange={handleChange}/>
+            <span class="select-notes-checkboxes-checkmark"></span>
+        </label>
+        
     )
 }
 
