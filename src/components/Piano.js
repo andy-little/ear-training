@@ -3,7 +3,7 @@ import { useEarTrainingContext } from '../EarTrainingContext'
 
 const Piano = () => {
 
-    const {setScore, setNumQs, question} = useEarTrainingContext();
+    const {setScore, setNumQs, notesState} = useEarTrainingContext();
     const cn = useRef(null)
     const cs = useRef(null)
     const dn = useRef(null)
@@ -32,7 +32,7 @@ const Piano = () => {
         }
 
     function onKeyPress(e){
-        const answer = question.slice(0,2);
+        const answer = notesState.question.slice(0,2);
         if(e.target.dataset.note === answer){
             setScore(prevState => prevState += 1);
             setNumQs(prevState => prevState += 1);

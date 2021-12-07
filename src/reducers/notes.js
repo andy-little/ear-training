@@ -3,7 +3,7 @@ const ALPHABET = [
 ];
 const OCTAVES = ['2', '3'];
 
-export const defaultState = {
+export const notesDefaultState = {
     notes: ALPHABET,
     octaves: OCTAVES,
     question: ''
@@ -19,8 +19,8 @@ export const notesReducer = (state, action) => {
 
         case 'REMOVE_NOTE': 
             /* payload: str must be lowercase note followed by s for sharp or n for natural  */
-            const newNotes = state.notes.filter(note => note !== action.payload);
-            return {...state, notes: newNotes};
+            const rmNotes = state.notes.filter(note => note !== action.payload);
+            return {...state, notes: rmNotes};
 
         case 'ADD_NOTE': 
             const isDuplicate = state.notes.find((item) => item === action.payload);
@@ -37,12 +37,12 @@ export const notesReducer = (state, action) => {
             const newNotes = [...state.notes, action.payload]
             return {...state, notes: newNotes};
 
-        case 'RANDOM': 
-            const note = state.notes[Math.floor(Math.random() * state.notes.length)];
-            const octave = state.octaves[Math.floor(Math.random() * state.octaves.length)];
-            return {...state, question: `${note}${octave}`};
+        case 'SET_QUESTION': 
+            /* const note = state.notes[Math.floor(Math.random() * state.notes.length)];
+            const octave = state.octaves[Math.floor(Math.random() * state.octaves.length)]; */
+            return {...state, question: action.payload};
         }
 
     throw new Error('no matching action type');
-    
+
 }
