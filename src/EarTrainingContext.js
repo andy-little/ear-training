@@ -47,7 +47,7 @@ export const EarTrainingContextProvider = ({children}) => {
             const minorKeys = keys.map(item => item.minor)
             setKeyOptions(minorKeys);
         }
-            
+        if(!isStartOpen){    
             setKey_((oldState)=>{
                 keys.forEach(({major, minor})=>{ 
                     if(major === oldState){
@@ -57,9 +57,12 @@ export const EarTrainingContextProvider = ({children}) => {
                     }
                 });
             });
+        }
     }, [isMajor])
     useEffect(() => {
-        playQuestion();        
+        if(!isStartOpen){
+            playQuestion();        
+        }
     }, [key_, numQs]);
 
 

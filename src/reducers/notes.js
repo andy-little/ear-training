@@ -40,6 +40,8 @@ export const notesReducer = (state, action) => {
         case 'SET_QUESTION': 
             /* const note = state.notes[Math.floor(Math.random() * state.notes.length)];
             const octave = state.octaves[Math.floor(Math.random() * state.octaves.length)]; */
+            /* MAYBE CHECK NOTE IS VALID */
+            /* COULD WRITE REUSABLE FUNCTION FOR THIS */
             return {...state, question: action.payload};
         }
 
