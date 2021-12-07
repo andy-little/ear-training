@@ -1,13 +1,19 @@
 import React, {useState} from 'react'
 import { useEarTrainingContext } from '../../EarTrainingContext';
 
-const SingleNote = ({name, data}) => {
-    const {noteOptions} = useEarTrainingContext();
-    const [isChecked, setIsChecked] = useState(true);
+const SingleNote = ({name, data, noteOptions}) => {
+    console.log('rendered');
+    console.log(data);
+    //const {noteOptions} = useEarTrainingContext();
+    const find = noteOptions.notes.find((item) => item.slice(0,2) === data);
+    const isFound = find ? true : false;
+    console.log(isFound);
+    
+    const [isChecked, setIsChecked] = useState(isFound);
     function handleChange(e){
         console.log(noteOptions);
         const nName = e.target.name;
-        const isFound = noteOptions.notes.find((item) => item.slice(0,2) === nName);
+        //const isFound = noteOptions.notes.find((item) => item.slice(0,2) === nName);
         if(isFound){
             noteOptions.removeNote(nName);
         }else{
