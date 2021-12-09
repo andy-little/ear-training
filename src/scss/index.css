@@ -480,9 +480,17 @@ label {
   margin: 0 0 0 auto;
 }
 
+.score-container:hover {
+  cursor: pointer;
+}
+
 .score-text {
   padding: 0.5em 1.5em;
   margin: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .footer-help {

@@ -38,11 +38,15 @@
     border-radius: var(--border-r);
     background-color: var(--clr-bg-light);
     margin: 0 0 0 auto;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &-text {
     padding: 0.5em 1.5em;
     margin: 0;
+    user-select: none;
   }
 }
 
