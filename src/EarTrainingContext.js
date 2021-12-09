@@ -26,13 +26,15 @@ export const EarTrainingContextProvider = ({children}) => {
     }
     
     function playQuestion() {
+        player.cancelQue();
         const question = randomNote();
-        notesDispatch({type: 'SET_QUESTION', payload: question})
+        notesDispatch({type: 'SET_QUESTION', payload: question});
         player.playCadence(key_).then((_) => {
             player.playNote(question);
         }).catch(err => console.log(err));
     }
     function replayQuestion() {
+        player.cancelQue();
         player.playCadence(key_).then((_) => {
             player.playNote(notesState.question);
         }).catch(err => console.log(err));
