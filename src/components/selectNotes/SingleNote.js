@@ -10,13 +10,23 @@ const SingleNote = ({name, data}) => {
     const [isChecked, setIsChecked] = useState(isFound);
 
     function handleChange(e){
-        const nName = e.target.name;
-        if(isFound){
-            notesDispatch({type: "REMOVE_NOTE", payload: nName});
-        }else{
-            notesDispatch({type: "ADD_NOTE", payload: nName});
+        if(notesState.notes.length > 1 && isChecked === true){
+            const nName = e.target.name;
+            if(isFound){
+                notesDispatch({type: "REMOVE_NOTE", payload: nName});
+            }else{
+                notesDispatch({type: "ADD_NOTE", payload: nName});
+            }
+            setIsChecked(!isChecked);
+        }else if(notesState.notes.length >= 1 && isChecked === false){
+            const nName = e.target.name;
+            if(isFound){
+                notesDispatch({type: "REMOVE_NOTE", payload: nName});
+            }else{
+                notesDispatch({type: "ADD_NOTE", payload: nName});
+            }
+            setIsChecked(!isChecked);
         }
-        setIsChecked(!isChecked);
     }
 
     useEffect(() => {

@@ -15,13 +15,17 @@ export const notesReducer = (state, action) => {
             return {...state, notes: ALPHABET};
 
         case 'REMOVE_ALL': 
-            return {...state, notes: []};
+            return {...state, notes: ['an']};
 
         case 'REMOVE_NOTE': 
             /* payload: str must be lowercase note followed by s for sharp or n for natural  */
-            const rmNotes = state.notes.filter(note => note !== action.payload);
+            /* ADD ERROR CHECKING */
+            if(state.notes.length > 1){
+                const rmNotes = state.notes.filter(note => note !== action.payload);
+                return {...state, notes: rmNotes};
+            }
+            return state;
             
-            return {...state, notes: rmNotes};
 
         case 'ADD_NOTE': 
             const isDuplicate = state.notes.find((item) => item === action.payload);

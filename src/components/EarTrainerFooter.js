@@ -6,7 +6,7 @@ import { useEarTrainingContext } from '../EarTrainingContext';
 import SelectNotesModal from './selectNotes/SelectNotesModal';
 
 const EarTrainerFooter = () => {
-    const {replayQuestion} = useEarTrainingContext();
+    const {replayQuestion, playQuestion, setNumQs} = useEarTrainingContext();
     const [isSelectOpen, setIsSelectOpen] = useState(false);
     const [menuLocation, setMenuLocation] = useState({})
     
@@ -17,15 +17,20 @@ const EarTrainerFooter = () => {
         const width = btn.width;
         setMenuLocation({left, top, width});
         setIsSelectOpen(!isSelectOpen);
-  }
+    };
+    const skipQuestion = () => {
+        playQuestion();
+        setNumQs(prevstate => prevstate += 1);
+
+    };
 
     return (
    <footer className="ear-trainer-footer">
         <button className="ear-trainer-footer-btn replay-btn">
-            <MdReplay  onClick={replayQuestion}/>
+            <MdReplay onClick={replayQuestion}/>
         </button>
         <button className="ear-trainer-footer-btn">
-            <MdSkipNext/> 
+            <MdSkipNext onClick={skipQuestion}/> 
         </button>
         <button className="ear-trainer-footer-btn">
             <GiMusicalNotes onClick={displayMenu} />
