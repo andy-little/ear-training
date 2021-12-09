@@ -6,6 +6,8 @@
   max-width: var(--max-width);
   margin: 0 auto 1em auto;
   color: var(--clr-bg);
+  z-index: 999;
+  position: relative;
 }
 
 .pick-key select {
@@ -14,6 +16,12 @@
 }
 .pick-key label {
   display: none;
+}
+
+.pick-key.dropdown-error select {
+  animation-name: dd-error;
+  animation-iteration-count: 5;
+  animation-duration: calc(2500ms / 5);
 }
 
 .button-cover,

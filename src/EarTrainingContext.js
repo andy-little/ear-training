@@ -18,6 +18,8 @@ export const EarTrainingContextProvider = ({children}) => {
     const [score, setScore] = useState(0);
     const [isHelpOpen, setIsHelpOpen] = useState(false);
     const [isStartOpen, setIsStartOpen] = useState(true);
+
+    const [isDropdownError, setIsDropdownError] = useState(false);
     
     function randomNote(){
         const note = notesState.notes[Math.floor(Math.random() * notesState.notes.length)];
@@ -86,7 +88,10 @@ export const EarTrainingContextProvider = ({children}) => {
             setIsStartOpen,
             replayQuestion,
             notesState,
-            notesDispatch
+            notesDispatch,
+            playQuestion,
+            isDropdownError, 
+            setIsDropdownError
         }}>
             {children}
         </EarTrainingContext.Provider>

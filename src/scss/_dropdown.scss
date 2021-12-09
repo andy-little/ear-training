@@ -12,6 +12,7 @@ select {
   text-overflow: ellipsis;
   white-space: nowrap;
   transition: var(--transition-clr); /////
+  user-select: none;
 
   &:focus {
     /* border-color: var(--clr-seconday); */
@@ -22,4 +23,5 @@ select {
 label {
   font-size: clamp(0.9rem, 4vw, 1.1rem);
   color: var(--clr-txt);
+  user-select: none;
 }

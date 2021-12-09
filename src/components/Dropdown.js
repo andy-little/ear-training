@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { useEarTrainingContext } from '../EarTrainingContext';
 
 
 
 const Dropdown = ({label, options, key_, setValue}) => {
+    const {isDropdownError, setIsDropdownError} = useEarTrainingContext();
+    
     return (
-        <div className="select-container pick-key">
+        <div className={`select-container pick-key ${isDropdownError && 'dropdown-error'}`}>
             <label htmlFor={label}>{label}:</label>
             <select name={label} id={label} value={key_} onChange={(e)=>{setValue(e.target.value)}}>
                 <option value="Select" disabled>Select</option>
