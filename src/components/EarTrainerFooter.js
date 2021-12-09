@@ -8,8 +8,19 @@ import SelectNotesModal from './selectNotes/SelectNotesModal';
 const EarTrainerFooter = () => {
     const {replayQuestion, playQuestion, setNumQs} = useEarTrainingContext();
     const [isSelectOpen, setIsSelectOpen] = useState(false);
-    const [menuLocation, setMenuLocation] = useState({})
-    const settingsBtn = useRef(null)
+    const [menuLocation, setMenuLocation] = useState({});
+    const settingsBtn = useRef(null);
+
+    const [size, setSize] = useState(null);
+    const handler = () => {
+        setSize(window.innerHeight);
+    }
+    useEffect(() => {
+        window.addEventListener("resize", handler);
+        return () => {
+        window.removeEventListener("resize", handler);
+        }
+    }, [])
     
     const displayMenu = (e) => {
         /* const btn = e.target.getBoundingClientRect();
@@ -31,7 +42,7 @@ const EarTrainerFooter = () => {
         const width = btn.width;
         setMenuLocation({left, top, width});
         
-    }, [])
+    }, [size])
 
     return (
    <footer className="ear-trainer-footer">
@@ -45,7 +56,7 @@ const EarTrainerFooter = () => {
             <MdSkipNext onClick={skipQuestion}/> 
         </button>
         
-        <SelectNotesModal location={menuLocation} isSelectOpen={isSelectOpen}/>
+        <SelectNotesModal size={size} location={menuLocation} isSelectOpen={isSelectOpen}/>
         <Score/>
     </footer>
     )
