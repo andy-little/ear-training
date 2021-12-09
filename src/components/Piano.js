@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useRef, useEffect} from 'react'
 import { useEarTrainingContext } from '../EarTrainingContext'
 
 const Piano = () => {
@@ -21,9 +21,10 @@ const Piano = () => {
     
     function answerColour(elm, status){
         /* changes colour of keys to indicate if correct or incorrect */
-        /* should recieve an element and a string of incorrect or correct */
+        /* 
+        elm: key element <li>
+        status: string incorrect || correct */
         setTimeout(()=>{
-
             elm.classList.add(status);
             setTimeout(()=>{
                 elm.classList.remove(status);
@@ -43,6 +44,16 @@ const Piano = () => {
             answerColour(keys[answer].current, 'correct');
         }
     }
+
+    useEffect(() => {
+        Object.values(keys).forEach(pianoKey => {
+            if (!notesState.notes.includes(pianoKey.current.dataset.note)){    
+                pianoKey.current.classList.add('inactive');
+            }else{
+                pianoKey.current.classList.remove('inactive');
+            }
+        });
+    }, [notesState])
     
     return (
         <div className="piano-container">

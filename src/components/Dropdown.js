@@ -3,7 +3,6 @@ import React from 'react'
 
 
 const Dropdown = ({label, options, key_, setValue}) => {
-    console.log(`rendered; ${key_}`);
     return (
         <div className="select-container pick-key">
             <label htmlFor={label}>{label}:</label>

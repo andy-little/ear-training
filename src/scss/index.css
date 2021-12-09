@@ -65,6 +65,7 @@ li {
 
 .white.inactive {
   opacity: 0.6;
+  pointer-events: none;
 }
 
 .black {
@@ -95,6 +96,7 @@ li {
 
 .black.inactive {
   opacity: 0.7;
+  pointer-events: none;
 }
 
 .d,
