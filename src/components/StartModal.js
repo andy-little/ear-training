@@ -6,17 +6,16 @@ import { useEarTrainingContext } from '../EarTrainingContext';
 const StartModal = () => {
     const {setIsStartOpen, key_, playQuestion, setIsDropdownError} = useEarTrainingContext();
     function handleClick(){
-        if(key_ !== 'Select'){
+        if(key_ && key_ !== 'Select'){
             setIsStartOpen(false);
             playQuestion();
         }else{
-            /* show please slect key error */
+            /* show please select key error */
             setIsDropdownError(true);
             setTimeout(()=>{
                 setIsDropdownError(false);
             },2500)
         }
-        //setKey_('C')
     }
     return (
         <section className="start-modal">

@@ -51,17 +51,17 @@ export const EarTrainingContextProvider = ({children}) => {
             const minorKeys = keys.map(item => item.minor)
             setKeyOptions(minorKeys);
         }
-        if(!isStartOpen){    
-            setKey_((oldState)=>{
-                keys.forEach(({major, minor})=>{ 
-                    if(major === oldState){
-                        setKey_(minor);
-                    }else if(minor === oldState){
-                        setKey_(major);
-                    }
-                });
+         
+        setKey_((oldState)=>{
+            keys.forEach(({major, minor})=>{ 
+                if(major === oldState){
+                    setKey_(minor);
+                }else if(minor === oldState){
+                    setKey_(major);
+                }
             });
-        }
+        });
+        
     }, [isMajor])
     useEffect(() => {
         if(!isStartOpen){
