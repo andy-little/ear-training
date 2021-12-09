@@ -15,7 +15,8 @@ export class AudioPlayer{
                 const cadences = new Cadences();
                 const player = new Audio(cadences[key]);
                 player.onended = (e)=>{
-                    resolve(`played cadence ${key}`)
+                    console.log(`played cadence ${key}`);
+                    resolve(player);
                 };
                 player.play();
             } catch (error) {

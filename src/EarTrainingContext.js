@@ -12,7 +12,7 @@ export const EarTrainingContextProvider = ({children}) => {
 
     const [keyOptions, setKeyOptions] = useState([]);
     const [isMajor, setIsMajor] = useState(true);
-    const [key_, setKey_] = useState('');
+    const [key_, setKey_] = useState('Select');
     
     const [numQs, setNumQs] = useState(0);
     const [score, setScore] = useState(0);

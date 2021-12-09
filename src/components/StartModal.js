@@ -7,7 +7,7 @@ const StartModal = () => {
     const {setIsStartOpen, setKey_} = useEarTrainingContext();
     function handleClick(){
         setIsStartOpen(false);
-        setKey_('C')
+        //setKey_('C')
     }
     return (
         <section className="start-modal">

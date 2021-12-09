@@ -6,7 +6,7 @@ const SingleNote = ({name, data}) => {
 
     const find = notesState.notes.find((item) => item === data);
     const isFound = find ? true : false;
-    
+
     const [isChecked, setIsChecked] = useState(isFound);
 
     function handleChange(e){
@@ -26,7 +26,7 @@ const SingleNote = ({name, data}) => {
     return (
         <label className="select-notes-checkboxes-container" htmlFor={data}>{name}
             <input className="select-notes-checkboxes-box" type="checkbox" checked={isChecked} name={data} id={data} onChange={handleChange}/>
-            <span class="select-notes-checkboxes-checkmark"></span>
+            <span className="select-notes-checkboxes-checkmark"></span>
         </label>
         
     )

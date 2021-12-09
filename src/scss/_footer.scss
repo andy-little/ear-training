@@ -6,13 +6,19 @@
   align-items: center;
 }
 
-.note-selector-btn {
-  font-size: clamp(1.2rem, 7.5vw, 2.4rem);
+.ear-trainer-footer-btn {
+  height: clamp(2rem, 8vw, 2.4rem);
+  width: clamp(2rem, 8vw, 2.4rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(2rem, 8vw, 2.4rem);
   color: var(--clr-bg);
   border-radius: 50%;
-  padding: 0.15em;
+  border: none;
+  padding: 0.1em;
   background-color: var(--clr-primary);
-  margin-left: 2vw;
+  margin-right: clamp(2rem, 5vw, 2.5rem);
   transition: transform 100ms linear, opacity 250ms linear;
   overflow: visible;
   &:hover {
@@ -20,12 +26,7 @@
   }
 }
 .replay-btn {
-  font-size: clamp(2.2rem, 7.5vw, 2.8rem);
-  color: var(--clr-primary);
-  transition: transform 100ms linear, opacity 250ms linear;
-  &:hover {
-    opacity: 0.85;
-  }
+  transition: transform 100ms linear;
   &:active {
     transform: rotate(180deg);
   }
