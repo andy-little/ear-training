@@ -289,7 +289,7 @@ label {
   max-width: var(--max-width);
   margin: 0 auto 1em auto;
   color: var(--clr-bg);
-  z-index: 999;
+  z-index: 800;
   position: relative;
 }
 
@@ -447,7 +447,7 @@ label {
   border: none;
   padding: 0.1em;
   background-color: var(--clr-primary);
-  margin-right: clamp(2rem, 5vw, 2.5rem);
+  margin-right: clamp(1.2rem, 7vw, 2.5rem);
   -webkit-transition: opacity 250ms linear, -webkit-transform 100ms linear;
   transition: opacity 250ms linear, -webkit-transform 100ms linear;
   transition: transform 100ms linear, opacity 250ms linear;
@@ -494,7 +494,7 @@ label {
 }
 
 .footer-help {
-  font-size: clamp(1em, 4vw, 1.7em);
+  font-size: clamp(1.4em, 4vw, 1.7em);
   color: var(--clr-primary);
 }
 
@@ -562,7 +562,7 @@ label {
 }
 
 .select-notes-modal {
-  z-index: 300;
+  z-index: 900;
   position: absolute;
   width: 18.5rem;
   max-width: 70%;
