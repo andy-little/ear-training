@@ -34,14 +34,18 @@ export const EarTrainingContextProvider = ({children}) => {
         player.playCadence(key_).then((_) => {
             player.playNote(question);
         }).catch(err => console.log(err));
-    }
+    };
     function replayQuestion() {
         player.cancelQue();
         player.playCadence(key_).then((_) => {
             player.playNote(notesState.question);
         }).catch(err => console.log(err));
-    }
+    };
     
+    function resizeHandler(){
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
 
     useEffect(() => {
         if(isMajor === true){
@@ -69,6 +73,16 @@ export const EarTrainingContextProvider = ({children}) => {
         }
     }, [key_, numQs]);
 
+    useEffect(() => {
+        
+        window.addEventListener("resize", resizeHandler);
+        return () => {
+        window.removeEventListener("resize", resizeHandler);
+        }
+    }, []);
+    useEffect(()=>{
+        resizeHandler();
+    },[])
 
     return (
         <EarTrainingContext.Provider value={{

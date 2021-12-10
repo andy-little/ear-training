@@ -2,9 +2,9 @@
   box-sizing: border-box;
 }
 
-html {
+/* html {
   height: -webkit-fill-available;
-}
+} */
 
 body {
   margin: 0;
@@ -15,8 +15,9 @@ body {
   color: var(--clr-txt);
   line-height: 1.6;
   min-height: 100vh;
-  /* mobile viewport bug fix */
-  min-height: -webkit-fill-available;
+  //min-height: -webkit-fill-available;
+  min-height: calc(var(--vh, 1vh) * 100);
+  //max-height: calc(var(--vh, 1vh) * 100);
 }
 
 .ear-trainer {
@@ -27,7 +28,9 @@ body {
   &-container {
     min-height: 100vh;
     /* mobile viewport bug fix */
-    min-height: -webkit-fill-available;
+    //min-height: -webkit-fill-available;
+    min-height: calc(var(--vh, 1vh) * 100);
+    //max-height: calc(var(--vh, 1vh) * 100);
     margin: 0;
     display: flex;
     align-items: center;
