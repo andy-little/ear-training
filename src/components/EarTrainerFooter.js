@@ -18,7 +18,7 @@ const EarTrainerFooter = () => {
 
     const getBtnCordinates = () => {
         const btn = settingsBtn.current.getBoundingClientRect();
-        const left = btn.left
+        const left = btn.left;
         const top = btn.top;
         const width = btn.width;
         setMenuLocation({left, top, width});
@@ -29,7 +29,7 @@ const EarTrainerFooter = () => {
         window.removeEventListener("resize", handler);
         }
     }, []);
-    
+
     useEffect(()=>{
         getBtnCordinates();
     },[size]);
