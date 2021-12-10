@@ -16,8 +16,14 @@ const Piano = () => {
     const an = useRef(null)
     const as = useRef(null)
     const bn = useRef(null)
+    const piano = useRef(null)
     const keys = {'cn': cn, 'cs': cs, 'dn': dn, 'ds': ds, 'en': en, 'fn': fn, 'fs': fs, 'gn': gn, 'gs': gs, 'an': an, 'as': as, 'bn': bn}
 
+    function resizeHandler(){
+        const pianoRect = piano.current.getBoundingClientRect();
+        const height = pianoRect.width / 2;
+        piano.current.style.height = `${height}px`;
+    }
     
     function answerColour(elm, status){
         /* changes colour of keys to indicate if correct or incorrect */
@@ -54,10 +60,19 @@ const Piano = () => {
             }
         });
     }, [notesState])
+
+    useEffect(() => {
+        
+        window.addEventListener("resize", resizeHandler);
+        return () => {
+        window.removeEventListener("resize", resizeHandler);
+        }
+    }, [])
+    useEffect(()=>{resizeHandler()},[])
     
     return (
         <div className="piano-container">
-            <ul>
+            <ul ref={piano}>
                 <li className="white c" ref={cn} data-note="cn" onClick={onKeyPress}><span className="text">C</span></li>
                 <li className="black cs" ref={cs} data-note="cs" onClick={onKeyPress}><span className="text-black">Db<br/>C#</span></li>
                 <li className="white d" ref={dn} data-note="dn" onClick={onKeyPress}><span className="text">D</span></li>
