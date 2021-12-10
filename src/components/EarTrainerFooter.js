@@ -11,43 +11,31 @@ const EarTrainerFooter = () => {
     const [menuLocation, setMenuLocation] = useState({});
     const settingsBtn = useRef(null);
 
-    const [size, setSize] = useState(null);
-    const handler = () => {
-        setSize(window.innerHeight);
-    }
-    useEffect(() => {
-        window.addEventListener("resize", handler);
-        return () => {
-        window.removeEventListener("resize", handler);
-        }
-    }, [])
-    
-    const displayMenu = (e) => {
-        /* const btn = e.target.getBoundingClientRect();
-        const left = btn.left
-        const top = btn.top;
-        const width = btn.width;
-        setMenuLocation({left, top, width}); */
-        setIsSelectOpen(!isSelectOpen);
-    };
-    const skipQuestion = () => {
-        playQuestion();
-        setNumQs(prevstate => prevstate += 1);
-
-    };
-    useEffect(() => {
+    const getBtnCordinates = () => {
         const btn = settingsBtn.current.getBoundingClientRect();
         const left = btn.left
         const top = btn.top;
         const width = btn.width;
         setMenuLocation({left, top, width});
-        
-    }, [size])
+    }
+    useEffect(() => {
+        window.addEventListener("resize", getBtnCordinates);
+        return () => {
+        window.removeEventListener("resize", getBtnCordinates);
+        }
+    }, [])
+    
+   
+    const skipQuestion = () => {
+        playQuestion();
+        setNumQs(prevstate => prevstate += 1);
+
+    };
 
     return (
    <footer className="ear-trainer-footer">
         <button ref={settingsBtn} className="ear-trainer-footer-btn">
-            <GiMusicalNotes onClick={displayMenu} />
+            <GiMusicalNotes onClick={()=>setIsSelectOpen(!isSelectOpen)} />
         </button> 
         <button className="ear-trainer-footer-btn replay-btn">
             <MdReplay onClick={replayQuestion}/>
@@ -56,7 +44,7 @@ const EarTrainerFooter = () => {
             <MdSkipNext onClick={skipQuestion}/> 
         </button>
         
-        <SelectNotesModal size={size} location={menuLocation} isSelectOpen={isSelectOpen}/>
+        <SelectNotesModal location={menuLocation} isSelectOpen={isSelectOpen}/>
         <Score/>
     </footer>
     )

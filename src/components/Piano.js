@@ -19,7 +19,7 @@ const Piano = () => {
     const piano = useRef(null)
     const keys = {'cn': cn, 'cs': cs, 'dn': dn, 'ds': ds, 'en': en, 'fn': fn, 'fs': fs, 'gn': gn, 'gs': gs, 'an': an, 'as': as, 'bn': bn}
 
-    function resizeHandler(){
+    function setPianoKeyHeight(){
         const pianoRect = piano.current.getBoundingClientRect();
         const height = pianoRect.width / 2;
         piano.current.style.height = `${height}px`;
@@ -63,12 +63,12 @@ const Piano = () => {
 
     useEffect(() => {
         
-        window.addEventListener("resize", resizeHandler);
+        window.addEventListener("resize", setPianoKeyHeight);
         return () => {
-        window.removeEventListener("resize", resizeHandler);
+        window.removeEventListener("resize", setPianoKeyHeight);
         }
     }, [])
-    useEffect(()=>{resizeHandler()},[])
+    useEffect(()=>{setPianoKeyHeight()},[])
     
     return (
         <div className="piano-container">
