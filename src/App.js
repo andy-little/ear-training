@@ -2,6 +2,7 @@ import Controls from "./components/Controls";
 import Piano from "./components/Piano";
 import EarTrainerFooter from "./components/EarTrainerFooter";
 import StartModal from "./components/StartModal";
+import HelpModal from "./components/HelpModal";
 import { useEarTrainingContext } from "./EarTrainingContext";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Controls/>
         <Piano/>
         <EarTrainerFooter/>
+        <HelpModal/>
       </section>
     </div>
   );

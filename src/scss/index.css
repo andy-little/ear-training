@@ -266,6 +266,7 @@ label {
 
 .help-modal {
   position: absolute;
+  z-index: 800;
   background-color: var(--clr-bg-light);
   color: var(--clr-primary);
   opacity: 0;
@@ -275,17 +276,14 @@ label {
   width: 80%;
   max-width: 30rem;
   left: 50%;
-  top: 25%;
-  -webkit-transform: translate(-50%, -25%);
-          transform: translate(-50%, -25%);
-  -webkit-transition: opacity 150ms linear;
-  transition: opacity 150ms linear;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .help-modal.show, .help-modal:active {
   opacity: 1;
-  z-index: 100;
-  pointer-events: default;
+  pointer-events: auto;
 }
 
 .controls {

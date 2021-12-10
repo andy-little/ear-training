@@ -14,7 +14,7 @@ const Controls = () => {
             <TonalityToggle/>
             
             <MdOutlineHelp className="footer-help" onMouseEnter={()=>{setIsHelpOpen(true)}} onMouseLeave={()=>{setIsHelpOpen(false)}}/>
-            <HelpModal/>
+            
         </div>
     )
 }
