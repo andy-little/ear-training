@@ -17,7 +17,7 @@
   &.show,
   &:active {
     opacity: 1;
-    //pointer-events: none;
+    pointer-events: revert;
   }
 
   &-header {

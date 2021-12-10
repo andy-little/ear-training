@@ -10,6 +10,13 @@
   position: relative;
 }
 
+.help-btn {
+  font-size: 2rem;
+  color: var(--clr-primary);
+  background-color: transparent;
+  border: none;
+}
+
 .pick-key select {
   margin-left: 0;
   width: 7rem;

@@ -284,6 +284,7 @@ label {
 
 .help-modal.show, .help-modal:active {
   opacity: 1;
+  pointer-events: revert;
 }
 
 .help-modal-header {
@@ -317,6 +318,13 @@ label {
   color: var(--clr-bg);
   z-index: 800;
   position: relative;
+}
+
+.help-btn {
+  font-size: 2rem;
+  color: var(--clr-primary);
+  background-color: transparent;
+  border: none;
 }
 
 .pick-key select {
@@ -521,11 +529,6 @@ label {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-}
-
-.footer-help {
-  font-size: 2rem;
-  color: var(--clr-primary);
 }
 
 .start-modal {

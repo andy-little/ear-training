@@ -5,9 +5,9 @@ import { useEarTrainingContext } from '../EarTrainingContext';
 
 
 const HelpModal = () => {
-    const {isHelpOpen} = useEarTrainingContext();
+    const {isHelpOpen, helpModal} = useEarTrainingContext();
     return (
-        <article className={`help-modal ${isHelpOpen && 'show'}`}>
+        <article ref={helpModal} className={`help-modal ${isHelpOpen && 'show'}`}>
             <h3 className='help-modal-header'>Getting Started</h3>
 
             <p>Select a key and hit play. If you are new we recommend starting with C Major.</p>

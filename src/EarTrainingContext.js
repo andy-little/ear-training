@@ -1,4 +1,4 @@
-import {useContext, useState, useEffect, createContext, useReducer, useLayoutEffect} from "react";
+import {useContext, useState, useEffect, createContext, useReducer, useLayoutEffect, useRef} from "react";
 import { keys } from "./data/keys";
 import {AudioPlayer} from './controller/AudioPlayer';
 import { notesReducer, notesDefaultState } from './reducers/notes';
@@ -13,7 +13,7 @@ export const EarTrainingContextProvider = ({children}) => {
     const [keyOptions, setKeyOptions] = useState([]);
     const [isMajor, setIsMajor] = useState(true);
     const [key_, setKey_] = useState('Select');
-    
+
     const [numQs, setNumQs] = useState(0);
     const [score, setScore] = useState(0);
     const [isHelpOpen, setIsHelpOpen] = useState(false);
@@ -21,6 +21,8 @@ export const EarTrainingContextProvider = ({children}) => {
     const [isSelectOpen, setIsSelectOpen] = useState(false);
 
     const [isDropdownError, setIsDropdownError] = useState(false);
+
+    const helpModal = useRef(null);
     
     function randomNote(){
         const note = notesState.notes[Math.floor(Math.random() * notesState.notes.length)];
@@ -111,7 +113,8 @@ export const EarTrainingContextProvider = ({children}) => {
             isDropdownError, 
             setIsDropdownError,
             isSelectOpen, 
-            setIsSelectOpen
+            setIsSelectOpen,
+            helpModal
         }}>
             {children}
         </EarTrainingContext.Provider>
