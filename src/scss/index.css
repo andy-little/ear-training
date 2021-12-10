@@ -280,6 +280,8 @@ label {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  -webkit-transition: opacity 200ms linear;
+  transition: opacity 200ms linear;
 }
 
 .help-modal.show, .help-modal:active {
