@@ -11,6 +11,11 @@ const EarTrainerFooter = () => {
     const [menuLocation, setMenuLocation] = useState({});
     const settingsBtn = useRef(null);
 
+    const [size, setSize] = useState(null);
+     const handler = () => {
+         setSize(window.innerHeight);
+     }
+
     const getBtnCordinates = () => {
         const btn = settingsBtn.current.getBoundingClientRect();
         const left = btn.left
@@ -19,11 +24,15 @@ const EarTrainerFooter = () => {
         setMenuLocation({left, top, width});
     }
     useEffect(() => {
-        window.addEventListener("resize", getBtnCordinates);
+        window.addEventListener("resize", handler);
         return () => {
-        window.removeEventListener("resize", getBtnCordinates);
+        window.removeEventListener("resize", handler);
         }
-    }, [])
+    }, []);
+    
+    useEffect(()=>{
+        getBtnCordinates();
+    },[size]);
     
    
     const skipQuestion = () => {
