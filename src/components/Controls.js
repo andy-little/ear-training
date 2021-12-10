@@ -7,7 +7,7 @@ import {useClickedOutside} from '../hooks/useClickedOutside'
 
 
 const Controls = () => {
-    const {keyOptions, key_, setKey_, setIsHelpOpen, helpModal} = useEarTrainingContext();
+    const {keyOptions, key_, setKey_, setIsHelpOpen, isHelpOpen, helpModal} = useEarTrainingContext();
     const helpBtn = useRef(null);
     useClickedOutside(helpModal, helpBtn, ()=>{setIsHelpOpen(false)});
 
@@ -15,7 +15,7 @@ const Controls = () => {
         <div className="controls">
             <Dropdown label="Key" options={keyOptions} key_={key_} setValue={setKey_}/>
             <TonalityToggle/>
-            <button ref={helpBtn} type="button" className="help-btn" onClick={()=>{setIsHelpOpen(true)}}><MdOutlineHelp/></button>
+            <button ref={helpBtn} type="button" className="help-btn" onClick={()=>{setIsHelpOpen(!isHelpOpen)}}><MdOutlineHelp/></button>
             
         </div>
     )
