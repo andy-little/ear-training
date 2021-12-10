@@ -273,8 +273,9 @@ label {
   pointer-events: none;
   padding: 1em 2em;
   border-radius: var(--border-r);
-  width: 80%;
-  max-width: 30rem;
+  width: 90%;
+  max-height: calc(var(--vh, 1vh) * 95);
+  max-width: 39rem;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -283,7 +284,22 @@ label {
 
 .help-modal.show, .help-modal:active {
   opacity: 1;
-  pointer-events: auto;
+  pointer-events: none;
+}
+
+.help-modal-header {
+  color: var(--clr-tertiary);
+  margin: 0;
+}
+
+.help-modal p {
+  margin: 1em 0 0 0;
+  line-height: 1.4;
+  font-size: clamp(0.6rem, 2.4vh, 1.2rem);
+}
+
+.help-modal svg {
+  font-size: 1.3em;
 }
 
 .controls {
@@ -505,7 +521,7 @@ label {
 }
 
 .footer-help {
-  font-size: clamp(1.4em, 4vw, 1.7em);
+  font-size: 2rem;
   color: var(--clr-primary);
 }
 
