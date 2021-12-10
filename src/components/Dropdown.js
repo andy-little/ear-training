@@ -4,7 +4,7 @@ import { useEarTrainingContext } from '../EarTrainingContext';
 
 
 const Dropdown = ({label, options, key_, setValue}) => {
-    const {isDropdownError, setIsDropdownError} = useEarTrainingContext();
+    const {isDropdownError} = useEarTrainingContext();
     
     return (
         <div className={`select-container pick-key ${isDropdownError && 'dropdown-error'}`}>

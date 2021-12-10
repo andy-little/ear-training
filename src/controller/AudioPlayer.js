@@ -12,7 +12,7 @@ export class AudioPlayer{
         const noteAudio = new NoteAudio();
         const player = new Audio(noteAudio[note]);
         player.play();
-        console.log(`played note ${note}`);
+        //console.log(`played note ${note}`);
     }
 
     playCadence(key){
@@ -22,7 +22,7 @@ export class AudioPlayer{
                 const player = new Audio(cadences[key]);
                 this.playing = [...this.playing, player]
                 player.onended = (e)=>{
-                    console.log(`played cadence ${key}`);
+                    //console.log(`played cadence ${key}`);
                     resolve(player);
                 };
                 player.play();
