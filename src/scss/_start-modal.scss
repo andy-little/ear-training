@@ -1,7 +1,7 @@
 .start-modal {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: calc(var(--vh, 1vh) * 100);
   inset: 0;
   z-index: 500;
   display: flex;

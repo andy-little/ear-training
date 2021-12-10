@@ -91,7 +91,7 @@ li {
 
 .text {
   font-size: 1.2em;
-  font-size: clamp(1em, 3.4vw, 1.7em);
+  font-size: clamp(0.9em, 3vw, 1.7em);
   font-weight: 700;
   margin-bottom: 1em;
   color: var(--clr-bg);
@@ -101,7 +101,7 @@ li {
 
 .text-black {
   font-size: 0.9em;
-  font-size: clamp(0.65em, 2.7vw, 1.1em);
+  font-size: clamp(0.55em, 2vw, 1.1em);
   font-weight: 500;
   line-height: 1.2;
   margin-bottom: 1.1em;
