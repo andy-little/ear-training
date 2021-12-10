@@ -327,6 +327,8 @@ label {
   color: var(--clr-primary);
   background-color: transparent;
   border: none;
+  margin: 0;
+  padding: 0;
 }
 
 .pick-key select {
@@ -456,13 +458,13 @@ label {
 
 .ear-trainer-footer {
   max-width: var(--max-width);
-  margin: clamp(0.6em, 3vh, 1.5em) auto 0 auto;
+  margin: clamp(0.7em, 3vh, 1.5em) auto 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .ear-trainer-footer-btn {
@@ -508,7 +510,7 @@ label {
 }
 
 .settings-btn {
-  z-index: 900;
+  z-index: 800;
 }
 
 .score-container {
