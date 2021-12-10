@@ -1,4 +1,4 @@
-import {useContext, useState, useEffect, createContext, useReducer} from "react";
+import {useContext, useState, useEffect, createContext, useReducer, useLayoutEffect} from "react";
 import { keys } from "./data/keys";
 import {AudioPlayer} from './controller/AudioPlayer';
 import { notesReducer, notesDefaultState } from './reducers/notes';
@@ -67,7 +67,7 @@ export const EarTrainingContextProvider = ({children}) => {
         });
         
     }, [isMajor])
-    useEffect(() => {
+    useLayoutEffect(() => {
         if(!isStartOpen){
             playQuestion();        
         }
