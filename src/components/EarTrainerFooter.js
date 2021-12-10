@@ -6,8 +6,8 @@ import { useEarTrainingContext } from '../EarTrainingContext';
 import SelectNotesModal from './selectNotes/SelectNotesModal';
 
 const EarTrainerFooter = () => {
-    const {replayQuestion, playQuestion, setNumQs} = useEarTrainingContext();
-    const [isSelectOpen, setIsSelectOpen] = useState(false);
+    const {replayQuestion, playQuestion, setNumQs, isSelectOpen, setIsSelectOpen} = useEarTrainingContext();
+    
     const [menuLocation, setMenuLocation] = useState({});
     const settingsBtn = useRef(null);
 
@@ -53,7 +53,7 @@ const EarTrainerFooter = () => {
             <MdSkipNext onClick={skipQuestion}/> 
         </button>
         
-        <SelectNotesModal location={menuLocation} isSelectOpen={isSelectOpen}/>
+        <SelectNotesModal openBtn={settingsBtn} location={menuLocation}/>
         <Score/>
     </footer>
     )

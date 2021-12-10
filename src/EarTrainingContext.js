@@ -18,6 +18,7 @@ export const EarTrainingContextProvider = ({children}) => {
     const [score, setScore] = useState(0);
     const [isHelpOpen, setIsHelpOpen] = useState(false);
     const [isStartOpen, setIsStartOpen] = useState(true);
+    const [isSelectOpen, setIsSelectOpen] = useState(false);
 
     const [isDropdownError, setIsDropdownError] = useState(false);
     
@@ -47,6 +48,8 @@ export const EarTrainingContextProvider = ({children}) => {
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     };
 
+   
+
     useEffect(() => {
         if(isMajor === true){
             const majorKeys = keys.map(item => item.major)
@@ -73,13 +76,14 @@ export const EarTrainingContextProvider = ({children}) => {
         }
     }, [key_, numQs]);
 
-    useEffect(() => {
-        
+    useEffect(() => {  
         window.addEventListener("resize", setCSSHeightVar);
         return () => {
         window.removeEventListener("resize", setCSSHeightVar);
         }
     }, []);
+
+
     useEffect(()=>{
         setCSSHeightVar();
     },[])
@@ -105,7 +109,9 @@ export const EarTrainingContextProvider = ({children}) => {
             notesDispatch,
             playQuestion,
             isDropdownError, 
-            setIsDropdownError
+            setIsDropdownError,
+            isSelectOpen, 
+            setIsSelectOpen
         }}>
             {children}
         </EarTrainingContext.Provider>

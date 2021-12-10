@@ -602,8 +602,8 @@ label {
   background-color: var(--clr-bg-light);
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: opacity 300ms linear;
-  transition: opacity 300ms linear;
+  -webkit-transition: opacity 200ms linear;
+  transition: opacity 200ms linear;
 }
 
 .select-notes-modal.show {
