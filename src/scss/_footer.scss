@@ -32,6 +32,10 @@
   }
 }
 
+.settings-btn {
+  z-index: 900;
+}
+
 .score {
   &-container {
     width: fit-content;

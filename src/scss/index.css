@@ -284,7 +284,6 @@ label {
 
 .help-modal.show, .help-modal:active {
   opacity: 1;
-  pointer-events: none;
 }
 
 .help-modal-header {
@@ -496,6 +495,10 @@ label {
 .replay-btn:active {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+
+.settings-btn {
+  z-index: 900;
 }
 
 .score-container {

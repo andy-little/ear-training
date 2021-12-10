@@ -43,7 +43,7 @@ const EarTrainerFooter = () => {
 
     return (
    <footer className="ear-trainer-footer">
-        <button ref={settingsBtn} className="ear-trainer-footer-btn">
+        <button ref={settingsBtn} className="ear-trainer-footer-btn settings-btn">
             <GiMusicalNotes onClick={()=>setIsSelectOpen(!isSelectOpen)} />
         </button> 
         <button className="ear-trainer-footer-btn replay-btn">
