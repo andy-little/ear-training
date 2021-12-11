@@ -2,6 +2,7 @@ import {useContext, useState, useEffect, createContext, useReducer, useLayoutEff
 import { keys } from "./data/keys";
 import {AudioPlayer} from './controller/AudioPlayer';
 import { notesReducer, notesDefaultState } from './reducers/notes';
+import useCustomVH from "./hooks/useCustomVH";
 
 const EarTrainingContext = createContext()
 const player = new AudioPlayer();
@@ -23,6 +24,8 @@ export const EarTrainingContextProvider = ({children}) => {
     const [isDropdownError, setIsDropdownError] = useState(false);
 
     const helpModal = useRef(null);
+
+    useCustomVH();
     
     function randomNote(){
         const note = notesState.notes[Math.floor(Math.random() * notesState.notes.length)];
@@ -44,11 +47,7 @@ export const EarTrainingContextProvider = ({children}) => {
             player.playNote(notesState.question);
         }).catch(err => console.log(err));
     };
-    
-    function setCSSHeightVar(){
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    };
+
 
    
 
@@ -78,17 +77,7 @@ export const EarTrainingContextProvider = ({children}) => {
         }
     }, [key_, numQs]);
 
-    useEffect(() => {  
-        window.addEventListener("resize", setCSSHeightVar);
-        return () => {
-        window.removeEventListener("resize", setCSSHeightVar);
-        }
-    }, []);
 
-
-    useEffect(()=>{
-        setCSSHeightVar();
-    },[])
 
     return (
         <EarTrainingContext.Provider value={{
