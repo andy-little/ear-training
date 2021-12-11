@@ -2,6 +2,7 @@ import {useContext, useState, useEffect, createContext, useReducer, useLayoutEff
 import { keys } from "./data/keys";
 import {AudioPlayer} from './controller/AudioPlayer';
 import { notesReducer, notesDefaultState } from './reducers/notes';
+import { gameReducer, gameDefaultState } from './reducers/game';
 import useCustomVH from "./hooks/useCustomVH";
 import randomNote from "./helpers/randomNote";
 
@@ -12,12 +13,13 @@ export const EarTrainingContextProvider = ({children}) => {
     
     const [notesState, notesDispatch] = useReducer(notesReducer, notesDefaultState);
 
-    const [keyOptions, setKeyOptions] = useState([]);
-    const [isMajor, setIsMajor] = useState(true);
-    const [key_, setKey_] = useState('Select');
+    const [gameState, gameDispatch] = useReducer(gameReducer, gameDefaultState);
 
-    const [numQs, setNumQs] = useState(0);
-    const [score, setScore] = useState(0);
+    //const [keyOptions, setKeyOptions] = useState([]);
+    //const [isMajor, setIsMajor] = useState(true);
+    //const [key_, setKey_] = useState('Select');
+    //const [numQs, setNumQs] = useState(0);
+    //const [score, setScore] = useState(0);
 
     const [isHelpOpen, setIsHelpOpen] = useState(false);
     const [isStartOpen, setIsStartOpen] = useState(true);
@@ -30,58 +32,40 @@ export const EarTrainingContextProvider = ({children}) => {
         player.cancelQue();
         const question = randomNote(notesState);
         notesDispatch({type: 'SET_QUESTION', payload: question});
-        player.playCadence(key_).then((_) => {
+        player.playCadence(gameState.key_).then((_) => {
             player.playNote(question);
         }).catch(err => console.log(err));
     };
 
     function replayQuestion() {
         player.cancelQue();
-        player.playCadence(key_).then((_) => {
+        player.playCadence(gameState.key_).then((_) => {
             player.playNote(notesState.question);
         }).catch(err => console.log(err));
     };
 
     useEffect(() => {
-        if(isMajor === true){
+        if(gameState.isMajor === true){
             const majorKeys = keys.map(item => item.major)
-            setKeyOptions(majorKeys);
+            gameDispatch({type: 'KEY_OPTIONS', payload: majorKeys});
         }else{
             const minorKeys = keys.map(item => item.minor)
-            setKeyOptions(minorKeys);
+            gameDispatch({type: 'KEY_OPTIONS', payload: minorKeys});
         }
-         
-        setKey_((oldState)=>{
-            keys.forEach(({major, minor})=>{ 
-                if(major === oldState){
-                    setKey_(minor);
-                }else if(minor === oldState){
-                    setKey_(major);
-                }
-            });
-        });
-        
-    }, [isMajor])
+    }, [gameState.isMajor]);
+
     useLayoutEffect(() => {
         if(!isStartOpen){
             playQuestion();        
         }
-    }, [key_, numQs]);
+    }, [gameState.key_, gameState.numQs]);
 
     useCustomVH();
 
     return (
         <EarTrainingContext.Provider value={{
-            keyOptions, 
-            setKeyOptions, 
-            key_, 
-            setKey_, 
-            isMajor, 
-            setIsMajor, 
-            numQs, 
-            setNumQs, 
-            score, 
-            setScore,
+            ...gameState,
+            gameDispatch,
             isHelpOpen,
             setIsHelpOpen,
             isStartOpen, 

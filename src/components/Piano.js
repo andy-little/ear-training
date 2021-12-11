@@ -3,7 +3,7 @@ import { useEarTrainingContext } from '../EarTrainingContext'
 
 const Piano = () => {
 
-    const {setScore, setNumQs, notesState} = useEarTrainingContext();
+    const {gameDispatch, notesState} = useEarTrainingContext();
     const cn = useRef(null)
     const cs = useRef(null)
     const dn = useRef(null)
@@ -26,10 +26,8 @@ const Piano = () => {
     }
     
     function answerColour(elm, status){
+        /* elm: <li>, status: str - incorrect || correct */
         /* changes colour of keys to indicate if correct or incorrect */
-        /* 
-        elm: key element <li>
-        status: string incorrect || correct */
         setTimeout(()=>{
             elm.classList.add(status);
             setTimeout(()=>{
@@ -39,19 +37,20 @@ const Piano = () => {
         }
 
     function onKeyPress(e){
+        /* update score and display correct answer with colour */
         const answer = notesState.question.slice(0,2);
         if(e.target.dataset.note === answer){
-            setScore(prevState => prevState += 1);
-            setNumQs(prevState => prevState += 1);
+            gameDispatch({type: 'CORRECT_ANSWER'});
             answerColour(e.target, 'correct')
         }else{
-            setNumQs(prevState => prevState += 1);
+            gameDispatch({type: 'INCORRECT_ANSWER'});
             answerColour(e.target, 'incorrect');
             answerColour(keys[answer].current, 'correct');
         }
     }
 
     useEffect(() => {
+        /* check if notes are selected and disable pianokeys if not */
         Object.values(keys).forEach(pianoKey => {
             if (!notesState.notes.includes(pianoKey.current.dataset.note)){    
                 pianoKey.current.classList.add('inactive');
@@ -62,7 +61,7 @@ const Piano = () => {
     }, [notesState])
 
     useEffect(() => {
-        
+        /* sets height of piano keys to keep to the right ratio against width */
         window.addEventListener("resize", setPianoKeyHeight);
         return () => {
         window.removeEventListener("resize", setPianoKeyHeight);
