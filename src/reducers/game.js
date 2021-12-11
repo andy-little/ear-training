@@ -10,8 +10,18 @@ export const gameDefaultState = {
 
 export const gameReducer = (state, action) => {
     switch (action.type) {
+        
         case 'KEY_OPTIONS': 
-            return {...state, keyOptions: action.payload};
+            let options;
+            if(state.isMajor === true){
+                const majorKeys = keys.map(item => item.major)
+                options = majorKeys;
+            }else{
+                const minorKeys = keys.map(item => item.minor)
+                options = minorKeys;
+            }
+
+            return {...state, keyOptions: options};
 
         case 'TOGGLE_TONALITY':
             let newKey;

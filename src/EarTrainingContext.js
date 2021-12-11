@@ -12,14 +12,7 @@ const player = new AudioPlayer();
 export const EarTrainingContextProvider = ({children}) => {   
     
     const [notesState, notesDispatch] = useReducer(notesReducer, notesDefaultState);
-
     const [gameState, gameDispatch] = useReducer(gameReducer, gameDefaultState);
-
-    //const [keyOptions, setKeyOptions] = useState([]);
-    //const [isMajor, setIsMajor] = useState(true);
-    //const [key_, setKey_] = useState('Select');
-    //const [numQs, setNumQs] = useState(0);
-    //const [score, setScore] = useState(0);
 
     const [isHelpOpen, setIsHelpOpen] = useState(false);
     const [isStartOpen, setIsStartOpen] = useState(true);
@@ -44,15 +37,7 @@ export const EarTrainingContextProvider = ({children}) => {
         }).catch(err => console.log(err));
     };
 
-    useEffect(() => {
-        if(gameState.isMajor === true){
-            const majorKeys = keys.map(item => item.major)
-            gameDispatch({type: 'KEY_OPTIONS', payload: majorKeys});
-        }else{
-            const minorKeys = keys.map(item => item.minor)
-            gameDispatch({type: 'KEY_OPTIONS', payload: minorKeys});
-        }
-    }, [gameState.isMajor]);
+    useEffect(() => gameDispatch({type: 'KEY_OPTIONS'}), [gameState.isMajor]);
 
     useLayoutEffect(() => {
         if(!isStartOpen){
