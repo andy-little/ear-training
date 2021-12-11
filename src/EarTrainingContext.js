@@ -3,6 +3,7 @@ import { keys } from "./data/keys";
 import {AudioPlayer} from './controller/AudioPlayer';
 import { notesReducer, notesDefaultState } from './reducers/notes';
 import useCustomVH from "./hooks/useCustomVH";
+import randomNote from "./helpers/randomNote";
 
 const EarTrainingContext = createContext()
 const player = new AudioPlayer();
@@ -17,39 +18,29 @@ export const EarTrainingContextProvider = ({children}) => {
 
     const [numQs, setNumQs] = useState(0);
     const [score, setScore] = useState(0);
+
     const [isHelpOpen, setIsHelpOpen] = useState(false);
     const [isStartOpen, setIsStartOpen] = useState(true);
     const [isSelectOpen, setIsSelectOpen] = useState(false);
-
     const [isDropdownError, setIsDropdownError] = useState(false);
 
     const helpModal = useRef(null);
-
-    useCustomVH();
-    
-    function randomNote(){
-        const note = notesState.notes[Math.floor(Math.random() * notesState.notes.length)];
-        const octave = notesState.octaves[Math.floor(Math.random() * notesState.octaves.length)];
-        return `${note}${octave}`;
-    }
     
     function playQuestion() {
         player.cancelQue();
-        const question = randomNote();
+        const question = randomNote(notesState);
         notesDispatch({type: 'SET_QUESTION', payload: question});
         player.playCadence(key_).then((_) => {
             player.playNote(question);
         }).catch(err => console.log(err));
     };
+
     function replayQuestion() {
         player.cancelQue();
         player.playCadence(key_).then((_) => {
             player.playNote(notesState.question);
         }).catch(err => console.log(err));
     };
-
-
-   
 
     useEffect(() => {
         if(isMajor === true){
@@ -77,7 +68,7 @@ export const EarTrainingContextProvider = ({children}) => {
         }
     }, [key_, numQs]);
 
-
+    useCustomVH();
 
     return (
         <EarTrainingContext.Provider value={{
