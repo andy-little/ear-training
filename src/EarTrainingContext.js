@@ -1,5 +1,4 @@
 import {useContext, useState, useEffect, createContext, useReducer, useLayoutEffect, useRef} from "react";
-import { keys } from "./data/keys";
 import {AudioPlayer} from './controller/AudioPlayer';
 import { notesReducer, notesDefaultState } from './reducers/notes';
 import { gameReducer, gameDefaultState } from './reducers/game';
@@ -21,7 +20,7 @@ export const EarTrainingContextProvider = ({children}) => {
 
     const helpModal = useRef(null);
     
-    function playQuestion() {
+    function playQuestion(){
         player.cancelQue();
         const question = randomNote(notesState);
         notesDispatch({type: 'SET_QUESTION', payload: question});

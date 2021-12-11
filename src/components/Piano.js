@@ -1,23 +1,23 @@
-import React, {useRef, useEffect} from 'react'
+import React, {useRef, useEffect, useMemo} from 'react'
 import { useEarTrainingContext } from '../EarTrainingContext'
 
 const Piano = () => {
 
     const {gameDispatch, notesState} = useEarTrainingContext();
-    const cn = useRef(null)
-    const cs = useRef(null)
-    const dn = useRef(null)
-    const ds = useRef(null)
-    const en = useRef(null)
-    const fn = useRef(null)
-    const fs = useRef(null)
-    const gn = useRef(null)
-    const gs = useRef(null)
-    const an = useRef(null)
-    const as = useRef(null)
-    const bn = useRef(null)
-    const piano = useRef(null)
-    const keys = {'cn': cn, 'cs': cs, 'dn': dn, 'ds': ds, 'en': en, 'fn': fn, 'fs': fs, 'gn': gn, 'gs': gs, 'an': an, 'as': as, 'bn': bn}
+    const cn = useRef(null);
+    const cs = useRef(null);
+    const dn = useRef(null);
+    const ds = useRef(null);
+    const en = useRef(null);
+    const fn = useRef(null);
+    const fs = useRef(null);
+    const gn = useRef(null);
+    const gs = useRef(null);
+    const an = useRef(null);
+    const as = useRef(null);
+    const bn = useRef(null);
+    const piano = useRef(null);
+    const keys = useMemo(()=>({'cn': cn, 'cs': cs, 'dn': dn, 'ds': ds, 'en': en, 'fn': fn, 'fs': fs, 'gn': gn, 'gs': gs, 'an': an, 'as': as, 'bn': bn}),[cn,cs,dn,ds,en,fn,fs,gn,gs,an,as,bn]);
 
     function setPianoKeyHeight(){
         const pianoRect = piano.current.getBoundingClientRect();
@@ -58,7 +58,7 @@ const Piano = () => {
                 pianoKey.current.classList.remove('inactive');
             }
         });
-    }, [notesState])
+    }, [notesState, keys])
 
     useEffect(() => {
         /* sets height of piano keys to keep to the right ratio against width */

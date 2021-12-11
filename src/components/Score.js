@@ -11,7 +11,7 @@ const Score = () => {
             setPercent(Math.floor((score/numQs) * 100));
         }
         
-    }, [numQs])
+    }, [numQs, score])
     return (
         <div className="score-container" onClick={()=>setIsPercent(!isPercent)}>
             <p className="score-text">

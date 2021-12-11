@@ -31,7 +31,7 @@ const SingleNote = ({name, data}) => {
 
     useEffect(() => {
         setIsChecked(isFound);
-    }, [notesState])
+    }, [isFound])
 
     return (
         <label className="select-notes-checkboxes-container" htmlFor={data}>{name}
