@@ -10,7 +10,7 @@ const HelpModal = () => {
         <article ref={helpModal} className={`help-modal ${isHelpOpen && 'show'}`}>
             <h3 className='help-modal-header'>Getting Started</h3>
 
-            <p>Select a key and hit play. If you are new we recommend starting with C Major.</p>
+            <p>Firstly, select a key. If you are new try starting with C Major.</p>
 
             <p>
                 Next click <GiMusicalNotes/> to choose which intervals you’d like to be tested on, <i>at least one note must be selected</i>. Try recognising the notes of the major triad before progressing to diatonic notes.
