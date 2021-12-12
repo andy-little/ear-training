@@ -11,9 +11,12 @@ const EarTrainerFooter = () => {
     const [menuLocation, setMenuLocation] = useState({});
     const settingsBtn = useRef(null);
 
-    const [size, setSize] = useState(null);
+    const [size, setSize] = useState({});
      const handler = () => {
-         setSize(window.innerHeight);
+          /* size is only used to trigger getBtnordinates
+            this seems backwards but fore some reason firing getBtnordinates in the actual event listener is buggy.
+            particulary as it often doesn't work with orientation change */
+         setSize({height: window.innerHeight, width: window.innerWidth});
      }
 
     const getBtnCordinates = () => {
