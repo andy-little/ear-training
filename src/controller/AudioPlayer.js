@@ -38,7 +38,12 @@ export class AudioPlayer{
 
     cancelQue(){
         if(this.playing){
-            this.playing.forEach(track => track.pause())
+            console.log(this.playing);
+            this.playing.forEach(track => {
+                if(!track.ended){
+                    track.pause();
+                }
+            })
             this.clear();
         }
     }

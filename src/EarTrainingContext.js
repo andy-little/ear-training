@@ -1,4 +1,4 @@
-import {useContext, useState, useEffect, createContext, useReducer, useLayoutEffect, useRef} from "react";
+import {useContext, useState, useEffect, createContext, useReducer, useLayoutEffect, useRef, useCallback} from "react";
 import {AudioPlayer} from './controller/AudioPlayer';
 import { notesReducer, notesDefaultState } from './reducers/notes';
 import { gameReducer, gameDefaultState } from './reducers/game';
@@ -20,14 +20,14 @@ export const EarTrainingContextProvider = ({children}) => {
 
     const helpModal = useRef(null);
     
-    function playQuestion(){
+    const playQuestion = useCallback(() => {
         player.cancelQue();
-        const question = randomNote(notesState);
+        const question = randomNote(notesState.notes, notesState.octaves);
         notesDispatch({type: 'SET_QUESTION', payload: question});
         player.playCadence(gameState.key_).then((_) => {
             player.playNote(question);
         }).catch(err => console.log(err));
-    };
+    },[notesState.notes, notesState.octaves, gameState.key_]);
 
     function replayQuestion() {
         player.cancelQue();
@@ -42,7 +42,7 @@ export const EarTrainingContextProvider = ({children}) => {
         if(!isStartOpen){
             playQuestion();        
         }
-    }, [gameState.key_, gameState.numQs]);
+    }, [gameState.key_, gameState.numQs, isStartOpen, playQuestion]);
 
     useCustomVH();
 

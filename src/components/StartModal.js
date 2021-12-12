@@ -4,11 +4,11 @@ import { useEarTrainingContext } from '../EarTrainingContext';
 
 
 const StartModal = () => {
-    const {setIsStartOpen, key_, playQuestion, setIsDropdownError} = useEarTrainingContext();
+    const {setIsStartOpen, key_, setIsDropdownError} = useEarTrainingContext();
     function handleClick(){
         if(key_ && key_ !== 'Select'){
             setIsStartOpen(false);
-            playQuestion();
+            
         }else{
             /* show please select key error */
             setIsDropdownError(true);

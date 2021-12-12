@@ -6,7 +6,7 @@ import { useEarTrainingContext } from '../EarTrainingContext';
 import SelectNotesModal from './selectNotes/SelectNotesModal';
 
 const EarTrainerFooter = () => {
-    const {replayQuestion, playQuestion, isSelectOpen, setIsSelectOpen, gameDispatch} = useEarTrainingContext();
+    const {replayQuestion, isSelectOpen, setIsSelectOpen, gameDispatch} = useEarTrainingContext();
     
     const [menuLocation, setMenuLocation] = useState({});
     const settingsBtn = useRef(null);
@@ -37,8 +37,6 @@ const EarTrainerFooter = () => {
    
     const skipQuestion = () => {
         gameDispatch({type: 'INCORRECT_ANSWER'});
-        playQuestion();
-
     };
 
     return (
