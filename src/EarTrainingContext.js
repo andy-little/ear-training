@@ -39,10 +39,10 @@ export const EarTrainingContextProvider = ({children}) => {
     useEffect(() => gameDispatch({type: 'KEY_OPTIONS'}), [gameState.isMajor]);
 
     useLayoutEffect(() => {
-        if(!isStartOpen){
+        if(!isStartOpen && !isSelectOpen){
             playQuestion();        
         }
-    }, [gameState.key_, gameState.numQs, isStartOpen, playQuestion]);
+    }, [gameState.key_, gameState.numQs, isStartOpen, isSelectOpen, playQuestion]);
 
     useCustomVH();
 
