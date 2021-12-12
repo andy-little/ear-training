@@ -29,12 +29,12 @@ export const EarTrainingContextProvider = ({children}) => {
         }).catch(err => console.log(err));
     },[notesState.notes, notesState.octaves, gameState.key_]);
 
-    function replayQuestion() {
+    const replayQuestion = useCallback(() => {
         player.cancelQue();
         player.playCadence(gameState.key_).then((_) => {
             player.playNote(notesState.question);
         }).catch(err => console.log(err));
-    };
+    },[gameState.key_, notesState.question]);
 
     useEffect(() => gameDispatch({type: 'KEY_OPTIONS'}), [gameState.isMajor]);
 
@@ -57,7 +57,6 @@ export const EarTrainingContextProvider = ({children}) => {
             replayQuestion,
             notesState,
             notesDispatch,
-            playQuestion,
             isDropdownError, 
             setIsDropdownError,
             isSelectOpen, 
