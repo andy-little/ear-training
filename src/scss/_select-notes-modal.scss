@@ -18,11 +18,11 @@
 
 .select-notes-checkboxes {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(4.5rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(3.6rem, 1fr));
   //margin-top: 1rem;
-  column-gap: 0.8em;
-  row-gap: 0.8em;
-  margin-bottom: 0.8em;
+  column-gap: 1.2em;
+  row-gap: 1.2em;
+  margin-bottom: 1.2em;
 }
 
 .select-notes-btn {
@@ -37,7 +37,7 @@
   color: var(--clr-bg);
   padding: 0.25em 1em;
   font: inherit;
-  font-size: clamp(0.7rem, 3vw, 1rem);
+  font-size: clamp(0.9rem, 2vw, 1.1 srem);
   text-transform: uppercase;
   letter-spacing: 0.175em;
   font-weight: 600;
