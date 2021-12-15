@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import Score from '../Score'
-import {EarTrainingContextProvider} from '../../../EarTrainingContext';
+import {EarTrainingContextProvider} from '../../../../EarTrainingContext';
 
 const MockScore = () =>{
   return(<EarTrainingContextProvider>
