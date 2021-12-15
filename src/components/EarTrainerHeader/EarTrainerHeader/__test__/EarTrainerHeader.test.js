@@ -45,12 +45,3 @@ describe('select key dropdown and tonality toggle', ()=> {
 
 });
 
-
-
-
-test('clicking help should reveal modal and hide modal', () => {
-  render(<MockHeader/>);
-  const helpBtn = screen.getByRole('button', {name : 'help'});
-  expect(screen.getByRole('heading', {name: /getting started/i}).toBeVisible(true));
-});
-
