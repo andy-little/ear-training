@@ -6,7 +6,7 @@ const TonalityToggle = () => {
   
     return (
         <div className="controller-tgl-btn">
-          <input type="checkbox" className="checkbox" onClick={()=>{gameDispatch({type: 'TOGGLE_TONALITY'})}}/>
+          <input type="checkbox" aria-label="toggle-tonality" className="checkbox" onClick={()=>{gameDispatch({type: 'TOGGLE_TONALITY'})}}/>
           <div className="knobs">
             <span>Major</span>
             {/* minor option is a css psuedo element */}

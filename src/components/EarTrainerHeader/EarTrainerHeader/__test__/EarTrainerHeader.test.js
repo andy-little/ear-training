@@ -13,7 +13,7 @@ const MockHeader = () =>{
 }
 
 
-describe('select key dropdown', ()=> {
+describe('select key dropdown and tonality toggle', ()=> {
 
     function checkKeySelected(keysArr){
         keysArr.forEach((key_)=>{
@@ -34,7 +34,15 @@ describe('select key dropdown', ()=> {
     test('should allow user to select keys', () => {
         render(<MockHeader/>)
         checkKeySelected(['C', 'G', 'D', 'F', 'Bb']);
-    })
+    });
+
+    test('toggles between major and minor options', () => {
+        render(<MockHeader/>);
+        fireEvent.click(screen.getByRole('checkbox', {name: 'toggle-tonality'}));
+        checkKeySelected(['Am', 'Em', 'Bm', 'Dm', 'Gm']);
+
+    });
+
 });
 
 
@@ -42,6 +50,7 @@ describe('select key dropdown', ()=> {
 
 test('clicking help should reveal modal and hide modal', () => {
   render(<MockHeader/>);
-  //expect(screen.getByRole('option', {name: /select/i}).selected).toBe(true);
+  const helpBtn = screen.getByRole('button', {name : 'help'});
+  expect(screen.getByRole('heading', {name: /getting started/i}).toBeVisible(true));
 });
 

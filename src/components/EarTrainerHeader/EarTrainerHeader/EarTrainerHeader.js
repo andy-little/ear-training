@@ -15,7 +15,7 @@ const Controls = () => {
         <div className="controls">
             <Dropdown label="Key" options={keyOptions} key_={key_} dispatch={gameDispatch} dispatchAction={'KEY_'}/>
             <TonalityToggle/>
-            <button ref={helpBtn} type="button" className="help-btn" onClick={()=>{setIsHelpOpen(!isHelpOpen)}}><MdOutlineHelp/></button>
+            <button ref={helpBtn} type="button" className="help-btn" aria-label='help' onClick={()=>{setIsHelpOpen(!isHelpOpen)}}><MdOutlineHelp/></button>
             
         </div>
     )
