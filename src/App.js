@@ -1,4 +1,4 @@
-import Controls from "./components/EarTrainerHeader/EarTrainerHeader";
+import EarTrainerHeader from "./components/EarTrainerHeader/EarTrainerHeader/EarTrainerHeader";
 import Piano from "./components/Piano";
 import EarTrainerFooter from "./components/EarTrainerFooter/EarTrainerFooter";
 import StartModal from "./components/StartModal";
@@ -12,7 +12,7 @@ function App() {
     <div className="ear-trainer-container">
       {isStartOpen && <StartModal/>}
       <section className="ear-trainer">
-        <Controls/>
+        <EarTrainerHeader/>
         <Piano/>
         <EarTrainerFooter/>
         <HelpModal/>
