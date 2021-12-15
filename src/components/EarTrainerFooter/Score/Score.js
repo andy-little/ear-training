@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { useEarTrainingContext } from '../EarTrainingContext'
+import { useEarTrainingContext } from '../../EarTrainingContext'
 
 
 const Score = () => {

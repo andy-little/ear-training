@@ -1,9 +1,9 @@
 import React, {useState, useRef, useEffect} from 'react'
-import Score from "./Score";
+import Score from "../Score/Score";
 import {GiMusicalNotes} from 'react-icons/gi'
 import { MdReplay, MdSkipNext } from 'react-icons/md'
-import { useEarTrainingContext } from '../EarTrainingContext';
-import SelectNotesModal from './selectNotes/SelectNotesModal';
+import { useEarTrainingContext } from '../../EarTrainingContext';
+import SelectNotesModal from '../selectNotes/SelectNotesModal';
 
 const EarTrainerFooter = () => {
     const {replayQuestion, isSelectOpen, setIsSelectOpen, gameDispatch} = useEarTrainingContext();

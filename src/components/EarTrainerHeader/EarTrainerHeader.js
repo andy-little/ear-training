@@ -1,9 +1,9 @@
 import React, {useRef} from 'react'
 import {MdOutlineHelp} from 'react-icons/md'
-import { useEarTrainingContext } from '../EarTrainingContext'
-import Dropdown from './Dropdown'
+import { useEarTrainingContext } from '../../EarTrainingContext'
+import Dropdown from '../Dropdown'
 import TonalityToggle from './TonalityToggle'
-import {useClickedOutside} from '../hooks/useClickedOutside'
+import {useClickedOutside} from '../../hooks/useClickedOutside'
 
 
 const Controls = () => {
