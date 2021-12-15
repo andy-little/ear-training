@@ -1,7 +1,7 @@
 import React,{useRef, useEffect} from 'react'
-import { useEarTrainingContext } from '../../EarTrainingContext'
+import { useEarTrainingContext } from '../../../EarTrainingContext'
 import SingleNote from './SingleNote'
-import {useClickedOutside} from "../../hooks/useClickedOutside"
+import {useClickedOutside} from "../../../hooks/useClickedOutside"
 
 
 
