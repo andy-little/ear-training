@@ -1,6 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react'
 import Score from "./Score/Score";
-import SelectNotesModal from './SettingsModal/SettingsModal';
+import SettingsModal from './SettingsModal/SettingsModal';
 import './EarTrainerFooter.scss';
 import {GiMusicalNotes} from 'react-icons/gi'
 import { MdReplay, MdSkipNext } from 'react-icons/md'
@@ -45,17 +45,17 @@ const EarTrainerFooter = () => {
 
     return (
    <footer className="ear-trainer-footer">
-        <button ref={settingsBtn} className="ear-trainer-footer-btn settings-btn">
-            <GiMusicalNotes onClick={()=>setIsSelectOpen(!isSelectOpen)} />
+        <button className="ear-trainer-footer-btn settings-btn" aria-label="settings" ref={settingsBtn} onClick={()=>setIsSelectOpen(!isSelectOpen)} >
+            <GiMusicalNotes />
         </button> 
-        <button className="ear-trainer-footer-btn replay-btn">
-            <MdReplay onClick={replayQuestion}/>
+        <button aria-label="replay" className="ear-trainer-footer-btn replay-btn" onClick={replayQuestion}>
+            <MdReplay/>
         </button>
-        <button className="ear-trainer-footer-btn">
-            <MdSkipNext onClick={skipQuestion}/> 
+        <button aria-label="skip" className="ear-trainer-footer-btn" onClick={skipQuestion}>
+            <MdSkipNext/> 
         </button>
         
-        <SelectNotesModal openBtn={settingsBtn} location={menuLocation}/>
+        <SettingsModal openBtn={settingsBtn} location={menuLocation}/>
         <Score/>
     </footer>
     )

@@ -23,7 +23,7 @@ const SelectNotesModal = ({openBtn, location: {left, top, width}}) => {
     }, [left, top, width]);
     
     return (
-        <aside ref={modal} className={`select-notes-modal ${isSelectOpen && 'show'}`}>
+        <aside data-testid="settings-modal" ref={modal} className={`select-notes-modal ${isSelectOpen && 'show'}`}>
             <div className="select-notes-checkboxes">
                 {noteNames.map(({name, data})=>{
                     return <SingleNote key={data} name={name} data={data}/>

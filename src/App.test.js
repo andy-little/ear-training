@@ -15,8 +15,6 @@ describe('help btn & modal', () => {
     /* these tests would be better with toBeVissible but need to rearrange css first */
     test('by default modal should be hidden', () => {
       render(<MockApp/>);
-      const helpBtn = screen.getByRole('button', {name : 'help'});
-      const helpHeading = screen.getByRole('heading', {name: /getting started/i});
       const helpModal = screen.getByTestId('help-modal');
       expect(helpModal).not.toHaveClass('show');
     });

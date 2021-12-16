@@ -36,7 +36,7 @@ const SingleNote = ({name, data}) => {
 
     return (
         <label className="select-notes-checkboxes-container" htmlFor={data}>{name}
-            <input className="select-notes-checkboxes-box" type="checkbox" checked={isChecked} name={data} id={data} onChange={handleChange}/>
+            <input className="select-notes-checkboxes-box" type="checkbox" checked={isChecked} name={data} id={data} onChange={handleChange} aria-label="note-select"/>
             <span className="select-notes-checkboxes-checkmark"></span>
         </label>
         
