@@ -1,6 +1,7 @@
-import React from 'react'
-import {AiFillPlayCircle} from 'react-icons/ai'
-import { useEarTrainingContext } from '../EarTrainingContext';
+import React from 'react';
+import './StartModal.scss';
+import {AiFillPlayCircle} from 'react-icons/ai';
+import { useEarTrainingContext } from '../../EarTrainingContext';
 
 
 const StartModal = () => {

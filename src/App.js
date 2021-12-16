@@ -1,7 +1,7 @@
 import EarTrainerHeader from "./components/EarTrainerHeader/EarTrainerHeader/EarTrainerHeader";
-import Piano from "./components/Piano";
+import Piano from "./components/Piano/Piano";
 import EarTrainerFooter from "./components/EarTrainerFooter/EarTrainerFooter";
-import StartModal from "./components/StartModal";
+import StartModal from "./components/StartModal/StartModal";
 import HelpModal from "./components/HelpModal/HelpModal";
 import { useEarTrainingContext } from "./EarTrainingContext";
 

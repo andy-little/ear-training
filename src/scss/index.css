@@ -68,7 +68,7 @@ body {
     background-color: #f751a1;
   }
 }
-
+/* 
 .piano-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -252,7 +252,7 @@ li {
     var(--clr-secondary) 0%,
     var(--clr-secondary-l) 100%
   );
-}
+} */
 /* 
 select {
   margin-left: 1em;
@@ -566,7 +566,7 @@ label {
     user-select: none;
   }
 }
- */
+ */ /* 
 .start-modal {
   position: absolute;
   width: 100%;
@@ -629,7 +629,7 @@ label {
   -webkit-transition: opacity 250ms linear;
   transition: opacity 250ms linear;
 }
-
+ */
 .select-notes-modal {
   z-index: 900;
   position: absolute;
