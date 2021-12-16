@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { useEarTrainingContext } from '../../../EarTrainingContext';
+import { useEarTrainingContext } from '../../../../EarTrainingContext';
 
 const SingleNote = ({name, data}) => {
     const {notesState, notesDispatch} = useEarTrainingContext();
