@@ -1,4 +1,5 @@
 import React from 'react';
+import './Dropdown.scss'
 import { useEarTrainingContext } from '../../EarTrainingContext';
 
 

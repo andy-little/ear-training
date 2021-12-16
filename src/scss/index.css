@@ -253,7 +253,7 @@ li {
     var(--clr-secondary-l) 100%
   );
 }
-
+/* 
 select {
   margin-left: 1em;
   border: 0.2em solid var(--clr-txt);
@@ -285,7 +285,7 @@ select {
 }
 
 select:focus {
-  /* border-color: var(--clr-seconday); */
+
   color: var(--clr-primary);
   outline: none;
 }
@@ -298,7 +298,7 @@ label {
   -ms-user-select: none;
   user-select: none;
 }
-
+ */
 .help-modal {
   position: absolute;
   z-index: 800;
