@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
+import './SingleNote.scss';
 import { useEarTrainingContext } from '../../../../EarTrainingContext';
 
 const SingleNote = ({name, data}) => {
