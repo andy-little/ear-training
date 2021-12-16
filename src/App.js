@@ -1,4 +1,4 @@
-import EarTrainerHeader from "./components/EarTrainerHeader/EarTrainerHeader/EarTrainerHeader";
+import EarTrainerHeader from "./components/EarTrainerHeader/EarTrainerHeader";
 import Piano from "./components/Piano/Piano";
 import EarTrainerFooter from "./components/EarTrainerFooter/EarTrainerFooter";
 import StartModal from "./components/StartModal/StartModal";

@@ -1,0 +1,87 @@
+.controller-tgl-btn {
+  position: relative;
+  width: calc(74px * var(--increase-toggle) - 24px); //-4
+  height: 36px;
+
+  .button-cover,
+  .knobs,
+  .layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: var(--border-r);
+  }
+
+  .checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .knobs {
+    z-index: 2;
+  }
+
+  .layer {
+    width: 100%;
+    background-color: var(--clr-bg-light);
+    transition: 0.3s ease all;
+  }
+
+  .knobs:before,
+  .knobs:after,
+  .knobs span {
+    position: absolute;
+    top: 4px;
+    width: calc(20px * var(--increase-toggle));
+    height: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    padding: 9px calc(4px * var(--increase-toggle));
+    border-radius: var(--border-r);
+    transition: 0.3s ease all;
+  }
+
+  /* coloured slide */
+  .knobs:before {
+    content: "";
+    left: 4px; /* margin-left */
+    background-color: var(--clr-secondary);
+  }
+
+  /* Minor text */
+  .knobs:after {
+    content: "Minor";
+    right: 4px; /* margin right */
+    top: 50%;
+    transform: translateY(-50%);
+    top: 16px;
+  }
+
+  /* Major text */
+  .knobs span {
+    display: inline-block;
+    left: 4px; /* margin left */
+    z-index: 1;
+    top: 2px;
+    user-select: none;
+  }
+
+  .checkbox:checked + .knobs:before {
+    left: calc(42px * var(--increase-toggle) - 20px);
+    background-color: var(--clr-tertiary);
+  }
+
+  .checkbox:checked + .knobs:after {
+    color: var(--clr-bg);
+  }
+}

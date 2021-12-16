@@ -1,5 +1,6 @@
 import React from 'react'
-import { useEarTrainingContext } from '../../EarTrainingContext'
+import './TonalityToggle.scss'
+import { useEarTrainingContext } from '../../../EarTrainingContext'
 
 const TonalityToggle = () => {
   const {gameDispatch} = useEarTrainingContext();

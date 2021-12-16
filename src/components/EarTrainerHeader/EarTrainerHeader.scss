@@ -1,0 +1,43 @@
+.ear-trainer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto 1em auto;
+  color: var(--clr-bg);
+  z-index: 800;
+  position: relative;
+}
+
+.help-btn {
+  font-size: 2rem;
+  color: var(--clr-primary);
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pick-key select {
+  margin-left: 0;
+  width: 7rem;
+}
+.pick-key label {
+  display: none;
+}
+
+.pick-key.dropdown-error select {
+  animation-name: dd-error;
+  animation-iteration-count: 5;
+  animation-duration: calc(2500ms / 5);
+}
+
+/* desktop */
+@media only screen and (min-width: 30rem) {
+  .pick-key select {
+    margin-left: 1em;
+  }
+  .pick-key label {
+    display: inline;
+  }
+}

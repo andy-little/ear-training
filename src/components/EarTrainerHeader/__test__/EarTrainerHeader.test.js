@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import EarTrainerHeader from '../EarTrainerHeader'
-import {EarTrainingContextProvider} from '../../../../EarTrainingContext';
+import {EarTrainingContextProvider} from '../../../EarTrainingContext';
 
 
 const MockHeader = () =>{
