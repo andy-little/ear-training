@@ -35,5 +35,13 @@ describe('help btn & modal', () => {
       fireEvent.click(helpBtn);
       expect(helpModal).not.toHaveClass('show');
     });
+    test('clicking off modal should close modal', () => {
+      render(<MockApp/>);
+      const helpBtn = screen.getByRole('button', {name : 'help'});
+      const helpModal = screen.getByTestId('help-modal');
+      fireEvent.click(helpBtn);
+      fireEvent.click(document);
+      expect(helpModal).not.toHaveClass('show');
+    });
 
 });    
