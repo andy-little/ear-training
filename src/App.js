@@ -2,7 +2,7 @@ import EarTrainerHeader from "./components/EarTrainerHeader/EarTrainerHeader/Ear
 import Piano from "./components/Piano";
 import EarTrainerFooter from "./components/EarTrainerFooter/EarTrainerFooter";
 import StartModal from "./components/StartModal";
-import HelpModal from "./components/HelpModal";
+import HelpModal from "./components/HelpModal/HelpModal";
 import { useEarTrainingContext } from "./EarTrainingContext";
 
 function App() {

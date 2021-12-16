@@ -1,7 +1,8 @@
-import React from 'react'
-import { MdReplay, MdSkipNext } from 'react-icons/md'
-import {GiMusicalNotes} from 'react-icons/gi'
-import { useEarTrainingContext } from '../EarTrainingContext';
+import React from 'react';
+import './HelpModal.scss';
+import { MdReplay, MdSkipNext } from 'react-icons/md';
+import {GiMusicalNotes} from 'react-icons/gi';
+import { useEarTrainingContext } from '../../EarTrainingContext';
 
 
 const HelpModal = () => {

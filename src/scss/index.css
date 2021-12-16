@@ -299,7 +299,7 @@ label {
   user-select: none;
 }
  */
-.help-modal {
+/* .help-modal {
   position: absolute;
   z-index: 800;
   background-color: var(--clr-bg-light);
@@ -339,7 +339,7 @@ label {
 .help-modal svg {
   font-size: 1.3em;
 }
-
+ */
 .controls {
   --increase: 2.2;
   display: -webkit-box;
