@@ -19,10 +19,10 @@ const StartModal = () => {
         }
     }
     return (
-        <section className="start-modal">
-           <div className="start-modal-bg" onClick={handleClick}>
+        <section className="start-modal" data-testid="start-modal">
+           <button className="start-modal-bg" onClick={handleClick} aria-label="start">
                <AiFillPlayCircle className="start-modal-play-btn"/>
-           </div>
+           </button>
         </section>
     )
 }
