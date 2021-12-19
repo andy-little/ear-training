@@ -1,9 +1,10 @@
 .select-notes-modal {
   z-index: 900;
   position: absolute;
-  width: 18.5rem;
-  max-width: 70%;
-  padding: 1.5em;
+  //width: 18.5rem;
+  width: 23rem;
+  max-width: 80%;
+  padding: 1.3em 1.5em;
   border: 0.1em solid var(--clr-primary);
   border-radius: var(--border-r);
   background-color: var(--clr-bg-light);
@@ -18,7 +19,7 @@
 
 .select-notes-checkboxes {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(3.6rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(3.4rem, 1fr));
   margin-top: 0.7rem;
   column-gap: 1.2em;
   row-gap: 1.2em;
@@ -57,6 +58,6 @@
   }
   &-label {
     margin: 0 0 0.5rem 0;
-    font-size: clamp(0.8rem, 3vw, 1.1rem);
+    font-size: clamp(1rem, 2vw, 1.2rem);
   }
 }

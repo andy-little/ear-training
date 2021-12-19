@@ -5,7 +5,7 @@
   padding-left: 35px;
   cursor: pointer;
   //font-size: 22px;
-  font-size: clamp(1rem, 3vw, 1.375rem);
+  font-size: clamp(1rem, 3vw, 1.2rem);
 }
 
 /* Hide the browser's default checkbox */
@@ -26,7 +26,8 @@
   //width: 25px;
   width: clamp(1.3rem, 4.5vw, 1.5625rem);
   height: clamp(1.3rem, 4.5vw, 1.5625rem);
-  background-color: var(--clr-primary);
+  background-color: var(--clr-bg);
+  opacity: 0.8;
   border-radius: var(--border-r);
   transition: opacity 250ms linear;
 }
@@ -42,7 +43,8 @@
 .select-notes-checkboxes-container
   input:checked
   ~ .select-notes-checkboxes-checkmark {
-  background-color: var(--clr-tertiary);
+  background-color: var(--clr-bg);
+  opacity: 1;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -69,7 +71,7 @@
   width: 18%;
   //height: 10px;
   height: clamp(0.4rem, 4vw, 0.625rem);
-  border: solid var(--clr-bg);
+  border: solid var(--clr-tertiary);
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
 }
