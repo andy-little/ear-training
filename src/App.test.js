@@ -3,7 +3,7 @@ import { render, screen, fireEvent, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App'
 import {EarTrainingContextProvider} from './EarTrainingContext';
-//import { act } from 'react-dom/test-utils';
+
 
 const MockApp = () =>{
     
@@ -75,6 +75,5 @@ describe('start modal integration', () => {
     
     expect(screen.queryByTestId('start-modal')).not.toBeInTheDocument();
   });
-  
   
 });
