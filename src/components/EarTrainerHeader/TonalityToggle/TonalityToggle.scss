@@ -1,7 +1,7 @@
 .controller-tgl-btn {
   position: relative;
   width: calc(74px * var(--increase-toggle) - 24px); //-4
-  height: 36px;
+  height: 38px;
 
   .button-cover,
   .knobs,
@@ -41,7 +41,7 @@
     position: absolute;
     top: 4px;
     width: calc(20px * var(--increase-toggle));
-    height: 10px;
+    height: 12px;
     font-size: 1rem;
     font-weight: bold;
     text-align: center;
@@ -64,7 +64,7 @@
     right: 4px; /* margin right */
     top: 50%;
     transform: translateY(-50%);
-    top: 16px;
+    top: 18px;
   }
 
   /* Major text */
