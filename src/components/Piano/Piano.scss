@@ -98,6 +98,11 @@
     pointer-events: none;
   }
 
+  .text-black,
+  .text-white {
+    transition: opacity 150ms linear;
+  }
+
   .text-black {
     font-size: 0.9em;
     font-size: clamp(0.55em, 2vw, 1.1em);
@@ -122,5 +127,13 @@
       var(--clr-secondary) 0%,
       var(--clr-secondary-l) 100%
     );
+  }
+  &.hide-text {
+    .text-black {
+      opacity: 0;
+    }
+    .text-white {
+      opacity: 0;
+    }
   }
 }

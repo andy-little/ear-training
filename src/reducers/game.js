@@ -45,7 +45,6 @@ export const gameReducer = (state, action) => {
             return {...state, numQs: state.numQs += 1};
 
         case 'TOGGLE_PIANO_DISPLAY_NOTES': 
-        console.log('hello');
             return {...state, isPianoDisplayNotes: !state.isPianoDisplayNotes};
 
         default:
