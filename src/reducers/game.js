@@ -5,7 +5,8 @@ export const gameDefaultState = {
     isMajor: true,
     key_: 'Select',
     numQs: 0,
-    score: 0
+    score: 0,
+    isPianoDisplayNotes: true
 };
 
 export const gameReducer = (state, action) => {
@@ -42,6 +43,10 @@ export const gameReducer = (state, action) => {
 
         case 'INCORRECT_ANSWER': 
             return {...state, numQs: state.numQs += 1};
+
+        case 'TOGGLE_PIANO_DISPLAY_NOTES': 
+        console.log('hello');
+            return {...state, isPianoDisplayNotes: !state.isPianoDisplayNotes};
 
         default:
             throw new Error('no matching action type');

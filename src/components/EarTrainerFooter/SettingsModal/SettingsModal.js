@@ -10,7 +10,7 @@ import Toggle from '../../Toggle/Toggle';
 const SelectNotesModal = ({openBtn, location: {left, top, width}}) => {
 
     const noteNames = [{'name': 'A', 'data': 'an'},{'name': 'A#', 'data': 'as'},{'name': 'B', 'data': 'bn'}, {'name': 'C', 'data': 'cn'},  {'name': 'C#', 'data': 'cs'},  {'name': 'D', 'data': 'dn'},  {'name': 'D#', 'data': 'ds'},  {'name': 'E', 'data': 'en'},  {'name': 'F', 'data': 'fn'},  {'name': 'F#', 'data': 'fs'},  {'name': 'G', 'data': 'gn'},  {'name': 'G#', 'data': 'gs'}]
-    const {notesDispatch, isSelectOpen, setIsSelectOpen} = useEarTrainingContext();
+    const {notesDispatch, isSelectOpen, setIsSelectOpen, gameDispatch} = useEarTrainingContext();
     const modal = useRef(null);
     useClickedOutside(modal, openBtn, ()=>{setIsSelectOpen(false)});
 
@@ -26,7 +26,7 @@ const SelectNotesModal = ({openBtn, location: {left, top, width}}) => {
     return (
         <aside data-testid="settings-modal" ref={modal} className={`select-notes-modal ${isSelectOpen && 'show'}`}>
             <div className="settings-display-names">
-                <h3 className='settings-label'>Display Names:</h3><Toggle/>
+                <h3 className='settings-label'>Display Names:</h3><Toggle dispatch={gameDispatch} typeStr='TOGGLE_PIANO_DISPLAY_NOTES'/>
             </div>
             <h3 className='settings-label'>Select Notes:</h3>
             <div className="select-notes-checkboxes">

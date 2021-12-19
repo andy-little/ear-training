@@ -1,13 +1,11 @@
 import React from 'react'
 import './Toggle.scss'
-import { useEarTrainingContext } from '../../EarTrainingContext'
 
-const Toggle = () => {
-  const {gameDispatch} = useEarTrainingContext();
-  
+const Toggle = ({dispatch, typeStr}) => {
+
     return (
         <div className="tgl-btn">
-          <input type="checkbox" aria-label="toggle-tonality" className="checkbox" onClick={()=>{gameDispatch({type: 'TOGGLE_TONALITY'})}}/>
+          <input type="checkbox" aria-label="toggle-tonality" className="checkbox" onClick={()=>{dispatch({type: typeStr})}}/>
           <div className="tgl-btn-knobs">
             <span></span>
             {/* minor option is a css psuedo element */}

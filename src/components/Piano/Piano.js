@@ -4,7 +4,7 @@ import { useEarTrainingContext } from '../../EarTrainingContext'
 
 const Piano = () => {
 
-    const {gameDispatch, notesState} = useEarTrainingContext();
+    const {gameDispatch, notesState, isPianoDisplayNotes} = useEarTrainingContext();
     const cn = useRef(null);
     const cs = useRef(null);
     const dn = useRef(null);
@@ -73,18 +73,18 @@ const Piano = () => {
     return (
         <div className="piano-container">
             <ul ref={piano}>
-                <li className="white c" ref={cn} data-note="cn" onClick={onKeyPress}><span className="text-white">C</span></li>
-                <li className="black cs" ref={cs} data-note="cs" onClick={onKeyPress}><span className="text-black">Db<br/>C#</span></li>
-                <li className="white d" ref={dn} data-note="dn" onClick={onKeyPress}><span className="text-white">D</span></li>
-                <li className="black ds" ref={ds} data-note="ds" onClick={onKeyPress}><span className="text-black">Eb<br/>D#</span></li>
-                <li className="white e" ref={en} data-note="en" onClick={onKeyPress}><span className="text-white">E</span></li>
-                <li className="white f" ref={fn} data-note="fn" onClick={onKeyPress}><span className="text-white">F</span></li>
-                <li className="black fs" ref={fs} data-note="fs" onClick={onKeyPress}><span className="text-black">Gb<br/>F#</span></li>
-                <li className="white g" ref={gn} data-note="gn" onClick={onKeyPress}><span className="text-white">G</span></li>
-                <li className="black gs" ref={gs} data-note="gs" onClick={onKeyPress}><span className="text-black">Ab<br/>G#</span></li>
-                <li className="white a" ref={an} data-note="an" onClick={onKeyPress}><span className="text-white">A</span></li>
-                <li className="black as" ref={as} data-note="as" onClick={onKeyPress}><span className="text-black">Bb<br/>A#</span></li>
-                <li className="white b" ref={bn} data-note="bn" onClick={onKeyPress}><span className="text-white">B</span></li>
+                <li className="white c" ref={cn} data-note="cn" onClick={onKeyPress}><span className="text-white">{isPianoDisplayNotes && 'C'}</span></li>
+                <li className="black cs" ref={cs} data-note="cs" onClick={onKeyPress}><span className="text-black">{isPianoDisplayNotes && 'Db'}<br/>{isPianoDisplayNotes && 'C#'}</span></li>
+                <li className="white d" ref={dn} data-note="dn" onClick={onKeyPress}><span className="text-white">{isPianoDisplayNotes && 'D'}</span></li>
+                <li className="black ds" ref={ds} data-note="ds" onClick={onKeyPress}><span className="text-black">{isPianoDisplayNotes && 'Eb'}<br/>{isPianoDisplayNotes && 'D#'}</span></li>
+                <li className="white e" ref={en} data-note="en" onClick={onKeyPress}><span className="text-white">{isPianoDisplayNotes && 'E'}</span></li>
+                <li className="white f" ref={fn} data-note="fn" onClick={onKeyPress}><span className="text-white">{isPianoDisplayNotes && 'F'}</span></li>
+                <li className="black fs" ref={fs} data-note="fs" onClick={onKeyPress}><span className="text-black">{isPianoDisplayNotes && 'Gb'}<br/>{isPianoDisplayNotes && 'F#'}</span></li>
+                <li className="white g" ref={gn} data-note="gn" onClick={onKeyPress}><span className="text-white">{isPianoDisplayNotes && 'G'}</span></li>
+                <li className="black gs" ref={gs} data-note="gs" onClick={onKeyPress}><span className="text-black">{isPianoDisplayNotes && 'Ab'}<br/>{isPianoDisplayNotes && 'G#'}</span></li>
+                <li className="white a" ref={an} data-note="an" onClick={onKeyPress}><span className="text-white">{isPianoDisplayNotes && 'A'}</span></li>
+                <li className="black as" ref={as} data-note="as" onClick={onKeyPress}><span className="text-black">{isPianoDisplayNotes && 'Bb'}<br/>{isPianoDisplayNotes && 'A#'}</span></li>
+                <li className="white b" ref={bn} data-note="bn" onClick={onKeyPress}><span className="text-white">{isPianoDisplayNotes && 'B'}</span></li>
             </ul>
         </div>
     )
