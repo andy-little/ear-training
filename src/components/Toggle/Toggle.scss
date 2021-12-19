@@ -1,0 +1,74 @@
+.tgl-btn {
+  --tgl-btn-width: 1.3rem;
+  --tgl-btn-padding: 0.3rem;
+  --tgl-btn-padding-top: 0.25rem;
+  position: relative;
+  width: calc(2 * var(--tgl-btn-width) + var(--tgl-btn-padding) + 0.25rem); //-4
+  height: calc(var(--tgl-btn-width) + (2 * var(--tgl-btn-padding-top)));
+  margin-left: 0.8rem;
+
+  .button-cover,
+  .tgl-btn-knobs,
+  .tgl-btn-layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 100rem;
+  }
+
+  .checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .tgl-btn-knobs {
+    z-index: 2;
+  }
+
+  .tgl-btn-layer {
+    width: 100%;
+    background-color: var(--clr-bg);
+    transition: 0.3s ease all;
+  }
+
+  .tgl-btn-knobs:before,
+  .tgl-btn-knobs:after,
+  .tgl-btn-knobs span {
+    position: absolute;
+    top: var(--tgl-btn-padding-top);
+    width: var(--tgl-btn-width);
+    height: var(--tgl-btn-width);
+    border-radius: 50%;
+    transition: 0.3s ease all;
+  }
+
+  /* coloured slide */
+  .tgl-btn-knobs:before {
+    content: "";
+    left: var(--tgl-btn-padding); /* margin-left */
+    background-color: var(--clr-tertiary);
+  }
+
+  /* Minor text */
+  .tgl-btn-knobs:after {
+    content: "";
+    right: var(--tgl-btn-width); // margin right
+  }
+
+  .checkbox:checked + .tgl-btn-knobs:before {
+    left: calc(var(--tgl-btn-width) + 0.25rem);
+    background-color: var(--clr-secondary);
+  }
+
+  .checkbox:checked + .tgl-btn-knobs:after {
+    color: var(--clr-bg);
+  }
+}

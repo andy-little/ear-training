@@ -3,6 +3,7 @@ import './SettingsModal.scss';
 import { useEarTrainingContext } from '../../../EarTrainingContext';
 import SingleNote from './SingleNote/SingleNote';
 import {useClickedOutside} from "../../../hooks/useClickedOutside";
+import Toggle from '../../Toggle/Toggle';
 
 
 
@@ -24,6 +25,10 @@ const SelectNotesModal = ({openBtn, location: {left, top, width}}) => {
     
     return (
         <aside data-testid="settings-modal" ref={modal} className={`select-notes-modal ${isSelectOpen && 'show'}`}>
+            <div className="settings-display-names">
+                <h3 className='settings-label'>Display Names:</h3><Toggle/>
+            </div>
+            <h3 className='settings-label'>Select Notes:</h3>
             <div className="select-notes-checkboxes">
                 {noteNames.map(({name, data})=>{
                     return <SingleNote key={data} name={name} data={data}/>

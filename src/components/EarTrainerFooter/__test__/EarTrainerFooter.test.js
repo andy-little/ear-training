@@ -18,6 +18,7 @@ function howManyChecked(arr){
     },0);
 };
 
+
 describe('Settings Menu', ()=> {
 
     describe('open/close', () => {
@@ -71,8 +72,7 @@ describe('Settings Menu', ()=> {
             
             checkboxes.forEach(box => {
                 expect(box).toBeChecked();
-            });
-            
+            });   
         });
 
         test('should uncheck/check', () => {

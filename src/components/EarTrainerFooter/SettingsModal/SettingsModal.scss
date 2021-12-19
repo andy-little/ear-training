@@ -19,7 +19,7 @@
 .select-notes-checkboxes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(3.6rem, 1fr));
-  //margin-top: 1rem;
+  margin-top: 0.7rem;
   column-gap: 1.2em;
   row-gap: 1.2em;
   margin-bottom: 1.2em;
@@ -47,5 +47,16 @@
 
   &:hover {
     opacity: 0.75;
+  }
+}
+
+.settings {
+  &-display-names {
+    display: flex;
+    //justify-content: space-between;
+  }
+  &-label {
+    margin: 0 0 0.5rem 0;
+    font-size: clamp(0.8rem, 3vw, 1.1rem);
   }
 }
