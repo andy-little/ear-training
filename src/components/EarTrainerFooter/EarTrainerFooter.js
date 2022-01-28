@@ -76,13 +76,13 @@ const EarTrainerFooter = () => {
             >
                 <MdReplay />
             </button>
-            <button
+            {/* <button
                 aria-label="skip"
                 className="ear-trainer-footer-btn"
                 onClick={skipQuestion}
             >
                 <MdSkipNext />
-            </button>
+            </button> */}
 
             <SettingsModal openBtn={settingsBtn} location={menuLocation} />
             <Score />
