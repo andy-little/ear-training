@@ -7,7 +7,7 @@ import Toggle from '../../Toggle/Toggle';
 
 
 
-const SelectNotesModal = ({openBtn, location: {left, top, width}}) => {
+const SettingsModal = ({openBtn, location: {left, top, width}}) => {
 
     const noteNames = [{'name': 'A', 'data': 'an'},{'name': 'A#', 'data': 'as'},{'name': 'B', 'data': 'bn'}, {'name': 'C', 'data': 'cn'},  {'name': 'C#', 'data': 'cs'},  {'name': 'D', 'data': 'dn'},  {'name': 'D#', 'data': 'ds'},  {'name': 'E', 'data': 'en'},  {'name': 'F', 'data': 'fn'},  {'name': 'F#', 'data': 'fs'},  {'name': 'G', 'data': 'gn'},  {'name': 'G#', 'data': 'gs'}]
     const {notesDispatch, isSelectOpen, setIsSelectOpen, gameDispatch} = useEarTrainingContext();
@@ -42,4 +42,4 @@ const SelectNotesModal = ({openBtn, location: {left, top, width}}) => {
     )
 }
 
-export default SelectNotesModal
+export default SettingsModal
