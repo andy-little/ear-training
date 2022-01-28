@@ -3,7 +3,7 @@ import "./SettingsModal.scss";
 import { useEarTrainingContext } from "../../../EarTrainingContext";
 import SingleNote from "./SingleNote/SingleNote";
 import { useClickedOutside } from "../../../hooks/useClickedOutside";
-import Toggle from "../../Toggle/Toggle";
+//import Toggle from "../../Toggle/Toggle";
 
 const SettingsModal = ({ openBtn, location: { left, top, width } }) => {
     const noteNames = [

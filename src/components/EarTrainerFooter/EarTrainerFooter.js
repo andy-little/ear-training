@@ -3,7 +3,7 @@ import Score from "./Score/Score";
 import SettingsModal from "./SettingsModal/SettingsModal";
 import "./EarTrainerFooter.scss";
 import { GiMusicalNotes } from "react-icons/gi";
-import { MdReplay, MdSkipNext } from "react-icons/md";
+import { MdReplay /* MdSkipNext */ } from "react-icons/md";
 import { BiShow, BiHide } from "react-icons/bi";
 import { useEarTrainingContext } from "../../EarTrainingContext";
 
@@ -46,9 +46,9 @@ const EarTrainerFooter = () => {
         getBtnCordinates();
     }, [size]);
 
-    const skipQuestion = () => {
+    /* const skipQuestion = () => {
         gameDispatch({ type: "INCORRECT_ANSWER" });
-    };
+    }; */
 
     return (
         <footer className="ear-trainer-footer">
