@@ -1,7 +1,3 @@
-ul {
-    list-style: none;
-}
-
 .sidebar {
     position: fixed;
     top: 0;
@@ -12,7 +8,6 @@ ul {
     background: var(--clr-bg-dark);
     display: grid;
     grid-template-rows: auto 1fr auto;
-    //row-gap: 1rem;
     box-shadow: darkred;
     transition: var(--transition-transform);
     transform: translate(-100%);
@@ -103,10 +98,10 @@ ul {
     margin-right: 1rem;
     transition: var(--transition-clr);
 }
-.custom-svg {
-    margin-right: 0;
-}
-
+/* .links .custom-svg {
+    margin-right: 0rem;
+} */
+/* 
 .social-icons {
     justify-self: center;
     display: flex;
@@ -121,7 +116,7 @@ ul {
 .social-icons a:hover {
     color: var(--clr-secondary);
 }
-
+ */
 @media screen and (min-width: 38rem) {
     .sidebar {
         width: var(--width-sidebar);
