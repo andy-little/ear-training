@@ -1,18 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './style/index.scss';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import {EarTrainingContextProvider} from './EarTrainingContext';
-
+import React from "react";
+import ReactDOM from "react-dom";
+//import "./style/sanitise.css";
+import "./style/index.scss";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { EarTrainingContextProvider } from "./EarTrainingContext";
+import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <EarTrainingContextProvider>
-      <App />
-    </EarTrainingContextProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <EarTrainingContextProvider>
+            <Router>
+                <App />
+            </Router>
+        </EarTrainingContextProvider>
+    </React.StrictMode>,
+    document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

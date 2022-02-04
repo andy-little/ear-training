@@ -1,0 +1,18 @@
+.error-page {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.error-header {
+    margin-bottom: 0.3rem;
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+.error-text {
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+    opacity: 0.85;
+    font-size: 1rem;
+}

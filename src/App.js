@@ -1,24 +1,20 @@
-import EarTrainerHeader from "./components/EarTrainerHeader/EarTrainerHeader";
-import Piano from "./components/Piano/Piano";
-import EarTrainerFooter from "./components/EarTrainerFooter/EarTrainerFooter";
-import StartModal from "./components/StartModal/StartModal";
-import HelpModal from "./components/HelpModal/HelpModal";
-import { useEarTrainingContext } from "./EarTrainingContext";
-
+import "./App.scss";
+import Sidebar from "./components/Sidebar/Sidebar";
+import SidebarBtn from "./components/Sidebar/SidebarBtn/SidebarBtn";
+import { Routes, Route } from "react-router-dom";
+import { Melodic, ErrorPage } from "./pages";
 function App() {
-  const {isStartOpen} = useEarTrainingContext();
-  
-  return (
-    <div className="ear-trainer-container">
-      {isStartOpen && <StartModal/>}
-      <section className="ear-trainer">
-        <EarTrainerHeader/>
-        <Piano/>
-        <EarTrainerFooter/>
-        <HelpModal/>
-      </section>
-    </div>
-  );
+    return (
+        <>
+            <SidebarBtn />
+            <Sidebar />
+            <Routes>
+                <Route exact path="/" element={<Melodic />} />
+
+                <Route path="*" element={<ErrorPage />} />
+            </Routes>
+        </>
+    );
 }
 
 export default App;
