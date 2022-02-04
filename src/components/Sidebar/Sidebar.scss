@@ -57,7 +57,7 @@ ul {
         opacity: 0.4;
         // this not a secure way of disabling the links,
         // use javascript too
-        pointer-events: none;
+        pointer-events: none; // stops not-allowed working
 
         &:hover {
             cursor: not-allowed;

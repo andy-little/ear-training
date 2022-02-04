@@ -47,5 +47,6 @@
 @media screen and (min-width: 78rem) {
     .start-modal {
         transform: translateX(calc(var(--width-sidebar) / 2));
+        overflow-x: hidden;
     }
 }

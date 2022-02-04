@@ -1,5 +1,10 @@
 @media screen and (min-width: 78rem) {
     .ear-trainer {
         transform: translateX(calc(var(--width-sidebar) / 2));
+        overflow-x: hidden;
+    }
+    .ear-trainer-container {
+        position: relative;
+        overflow-x: hidden;
     }
 }
