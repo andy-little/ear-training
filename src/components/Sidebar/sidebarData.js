@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import { CgFileDocument } from "react-icons/cg";
 import { BsMusicNoteBeamed } from "react-icons/bs";
+import { AiOutlineKey } from "react-icons/ai";
 //import { TiHome } from "react-icons/ti";
 import { ReactComponent as Chord } from "../../svg/chord.svg";
 
@@ -43,13 +44,20 @@ export const links = [
     },
     {
         id: 4,
-        url: "/key",
-        text: "identify key",
-        icon: <FaSlackHash />,
+        url: "/key-finding",
+        text: "key finding",
+        icon: <AiOutlineKey />,
         isLocked: true,
     },
     {
         id: 5,
+        url: "/key-retention",
+        text: "key retention",
+        icon: <FaSlackHash />,
+        isLocked: true,
+    },
+    {
+        id: 6,
         url: "/accompaniment",
         text: "accompaniment",
         icon: <FaGuitar />,
