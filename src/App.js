@@ -10,8 +10,20 @@ function App() {
             <Sidebar />
             <Routes>
                 <Route exact path="/" element={<Melodic />} />
+                <Route
+                    exact
+                    path="/tutorial"
+                    element={
+                        <ErrorPage message="This page is currently under construction. Please check back later." />
+                    }
+                />
 
-                <Route path="*" element={<ErrorPage />} />
+                <Route
+                    path="*"
+                    element={
+                        <ErrorPage message="The page you are looking for does not exist" />
+                    }
+                />
             </Routes>
         </>
     );
