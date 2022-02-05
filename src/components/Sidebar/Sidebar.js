@@ -2,7 +2,7 @@ import React from "react";
 import "./Sidebar.scss";
 //import logo from "../../logo.svg";
 import { FaTimes } from "react-icons/fa";
-import { social, links } from "./sidebarData";
+import { links } from "./sidebarData";
 import { Link } from "react-router-dom";
 import { useEarTrainingContext } from "../../EarTrainingContext";
 import { IoIosLock } from "react-icons/io";
@@ -12,7 +12,6 @@ const Sidebar = () => {
         navState: { isSidebarOpen },
         navDispatch,
     } = useEarTrainingContext();
-    console.log(isSidebarOpen);
     return (
         <aside
             className={`${isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}`}
