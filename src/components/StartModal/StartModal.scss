@@ -40,13 +40,5 @@
         font-size: clamp(5rem, 40vw, 12rem);
         color: var(--clr-bg-light);
         transition: opacity 250ms linear;
-        //background-color: var(--clr-bg-light);
-    }
-}
-
-@media screen and (min-width: 78rem) {
-    .start-modal {
-        transform: translateX(calc(var(--width-sidebar) / 2));
-        overflow-x: hidden;
     }
 }

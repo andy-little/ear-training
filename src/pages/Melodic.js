@@ -9,15 +9,17 @@ import HelpModal from "../components/HelpModal/HelpModal";
 const Melodic = () => {
     const { isStartOpen } = useEarTrainingContext();
     return (
-        <article className="ear-trainer-container">
-            {isStartOpen && <StartModal />}
-            <div className="ear-trainer">
-                <EarTrainerHeader />
-                <Piano />
-                <EarTrainerFooter />
-                <HelpModal />
-            </div>
-        </article>
+        <div className="page-wrapper">
+            <article className="ear-trainer-container">
+                {isStartOpen && <StartModal />}
+                <div className="ear-trainer">
+                    <EarTrainerHeader />
+                    <Piano />
+                    <EarTrainerFooter />
+                    <HelpModal />
+                </div>
+            </article>
+        </div>
     );
 };
 

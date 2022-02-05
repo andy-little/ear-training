@@ -18,7 +18,6 @@
     padding: 0.1em;
     background-color: var(--clr-primary);
     margin-right: clamp(1.2rem, 7vw, 2.5rem);
-    //margin-right: clamp(1.2rem, 4.5vw, 2.5rem);
     transition: transform 100ms linear, opacity 250ms linear;
     overflow: visible;
     &:hover {
