@@ -6,8 +6,8 @@
     width: 100%;
     height: 100%;
     background: var(--clr-bg-dark);
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+    //display: grid;
+    //grid-template-rows: auto 1fr auto;
     box-shadow: darkred;
     transition: var(--transition-transform);
     transform: translate(-100%);

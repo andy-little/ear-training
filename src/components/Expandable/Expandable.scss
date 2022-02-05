@@ -1,0 +1,42 @@
+.expandable-heading {
+    // display: flex;
+    // align-items: center;
+    letter-spacing: 0.15rem;
+
+    margin: 0 0 1rem 0;
+    color: var(--clr-tertiary);
+    cursor: pointer;
+    width: fit-content;
+    font-size: clamp(1.15rem, 5vw, 1.8rem);
+}
+.expandable-dropdown-icon {
+    margin-left: 0.5rem;
+}
+
+.expandable-body {
+    max-height: 0px;
+    //transform: scaleY(0);
+    transform-origin: top;
+    transition: max-height 180ms linear, opacity 120ms linear;
+    overflow: hidden;
+    opacity: 0;
+    & p {
+        margin: 0 0 1rem 0;
+        line-height: 1.6;
+        font-size: clamp(0.9rem, 3vw, 1rem);
+        opacity: 0.95;
+    }
+    &.show {
+        opacity: 1;
+    }
+}
+
+.expandable-dropdown-icon {
+    font-size: clamp(1.15rem, 5vw, 1.8rem);
+    margin-bottom: -0.2rem;
+
+    transition: transform 150ms linear;
+    &.show {
+        transform: rotate(-180deg);
+    }
+}
