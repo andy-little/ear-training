@@ -1,9 +1,9 @@
 .error-page {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: clamp(60vh, 30rem, 100vh);
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
