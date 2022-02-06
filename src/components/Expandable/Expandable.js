@@ -1,10 +1,27 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Expandable.scss";
 import { IoIosArrowDropdown } from "react-icons/io";
 
-const Expandable = ({ title, bodyHTML }) => {
+const Expandable = ({ title, children }) => {
     const bodyRef = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        // this is expensive. Is there a better way to do this?
+        // if not perhaps use a debouncer
+        const handleResize = () => {
+            if (isOpen) {
+                bodyRef.current.style.maxHeight = `${bodyRef.current.scrollHeight}px`;
+            } else {
+                bodyRef.current.style.maxHeight = null;
+            }
+        };
+        window.addEventListener("resize", handleResize);
+        return () => {
+            document.removeEventListener("resize", handleResize);
+        };
+    }, [isOpen]);
+
     const handleClick = () => {
         setIsOpen((prevState) => {
             return !prevState;
@@ -12,7 +29,6 @@ const Expandable = ({ title, bodyHTML }) => {
         if (bodyRef.current.style.maxHeight) {
             bodyRef.current.style.maxHeight = null;
         } else {
-            console.log(bodyRef.current.scrollHeight);
             bodyRef.current.style.maxHeight = `${bodyRef.current.scrollHeight}px`;
         }
     };
@@ -29,7 +45,7 @@ const Expandable = ({ title, bodyHTML }) => {
                 ref={bodyRef}
                 className={`expandable-body ${isOpen && "show"}`}
             >
-                {bodyHTML}
+                {children}
             </div>
         </section>
     );
