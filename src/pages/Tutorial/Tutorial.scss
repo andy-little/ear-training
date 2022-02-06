@@ -7,3 +7,8 @@
         transform: translateX(calc(var(--width-sidebar)));
     }
 }
+
+.tutorial-title {
+    font-size: clamp(1.3rem, 5vw, 2rem);
+    color: var(--clr-secondary);
+}

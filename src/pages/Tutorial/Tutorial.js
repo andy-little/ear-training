@@ -5,8 +5,10 @@ import "./Tutorial.scss";
 const Tutorial = () => {
     return (
         <article className="tutorial">
-            <h1>Tutorial</h1>
-            <Expandable title="What Is Relative Pitch">
+            <h1 className="tutorial-title">
+                A Guide To Developing Relative Pitch
+            </h1>
+            <Expandable title="What Is Relative Pitch?">
                 <p>text goes here</p>
             </Expandable>
             <Expandable title="Why interval recognition isn’t enough?">
