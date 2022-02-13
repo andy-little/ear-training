@@ -1,8 +1,5 @@
 .expandable-heading {
-    // display: flex;
-    // align-items: center;
     letter-spacing: 0.15rem;
-
     margin: 0 0 1rem 0;
     color: var(--clr-tertiary);
     cursor: pointer;
@@ -15,20 +12,17 @@
 
 .expandable-body {
     max-height: 0px;
-    //transform: scaleY(0);
     transform-origin: top;
-    transition: max-height 180ms linear, opacity 120ms linear;
+    transition: max-height 300ms linear;
     overflow: hidden;
-    opacity: 0;
     & p {
         margin: 0 0 1rem 0;
         line-height: 1.6;
         font-size: clamp(0.9rem, 3vw, 1rem);
-        opacity: 0.95;
         max-width: var(--max-width-text);
-    }
-    &.show {
-        opacity: 1;
+        background-color: var(--clr-bg-med);
+        padding: 1rem;
+        border-radius: 8px;
     }
 }
 
@@ -36,7 +30,7 @@
     font-size: clamp(1.15rem, 5vw, 1.4rem);
     margin-bottom: -0.2rem;
 
-    transition: transform 150ms linear;
+    transition: transform 300ms linear;
     &.show {
         transform: rotate(-180deg);
     }

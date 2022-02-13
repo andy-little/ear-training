@@ -2,7 +2,7 @@ import "./App.scss";
 import Sidebar from "./components/Sidebar/Sidebar";
 import SidebarBtn from "./components/Sidebar/SidebarBtn/SidebarBtn";
 import { Routes, Route } from "react-router-dom";
-import { Melodic, Tutorial, ErrorPage } from "./pages";
+import { Melodic, Tutorial, ErrorPage, Lesson } from "./pages";
 function App() {
     return (
         <>
@@ -11,6 +11,7 @@ function App() {
             <Routes>
                 <Route exact path="/" element={<Melodic />} />
                 <Route exact path="/tutorial" element={<Tutorial />} />
+                <Route exact path="/lesson" element={<Lesson />} />
                 {/* <ErrorPage message="This page is currently under construction. Please check back later." /> */}
 
                 <Route

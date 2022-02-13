@@ -1,0 +1,44 @@
+.lesson-grid {
+    padding-top: 6rem;
+    padding-bottom: 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: auto minmax(60vh, auto) auto;
+    grid-template-areas:
+        "title   title   progress"
+        "l-content l-content l-content"
+        "prev    ....... next";
+}
+
+.lesson-wrapper-prev {
+    grid-area: prev;
+}
+.lesson-wrapper-next {
+    margin-left: auto;
+    grid-area: next;
+}
+
+// from lesson files not lesson wrapper
+.lesson-title {
+    grid-area: title;
+    h1 {
+        margin: 0;
+    }
+}
+.lesson-content {
+    grid-area: l-content;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--clr-bg-med);
+
+    // export to lessons.scss
+    p,
+    h2,
+    h3 {
+        max-width: var(--max-width-text);
+    }
+    ///
+}

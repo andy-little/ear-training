@@ -5,14 +5,17 @@ import "./style/index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { EarTrainingContextProvider } from "./EarTrainingContext";
+import { LessonContextProvider } from "./contexts/LessonContext";
 import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
     <React.StrictMode>
         <EarTrainingContextProvider>
-            <Router>
-                <App />
-            </Router>
+            <LessonContextProvider>
+                <Router>
+                    <App />
+                </Router>
+            </LessonContextProvider>
         </EarTrainingContextProvider>
     </React.StrictMode>,
     document.getElementById("root")

@@ -4,7 +4,9 @@
 
 @media screen and (min-width: 78rem) {
     .tutorial {
-        transform: translateX(calc(var(--width-sidebar)));
+        transform: translateX(calc(var(--width-sidebar) * 1.2));
+        // (20% extra sidebar width for margin)
+        padding-top: 1.9rem;
     }
 }
 
