@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import LessonWrapper from "../../components/LessonWrapper/LessonWrapper";
 import "./Lesson.scss";
 
