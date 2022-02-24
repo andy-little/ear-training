@@ -9,7 +9,7 @@ const Lesson = () => {
     return (
         <LessonWrapper>
             <div className="lesson-title">
-                <h1>Diatonic Notes</h1>
+                <h1>Getting Started</h1>
             </div>
             <div className="lesson-content">{lesson}</div>
         </LessonWrapper>
