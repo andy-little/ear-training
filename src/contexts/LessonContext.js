@@ -1,7 +1,7 @@
 import React, { useContext, createContext, useState, useEffect } from "react";
-import { Lesson1A, Lesson1B } from "../pages/Lessons/LessonOne";
+import { Lesson1A, Lesson1B, Lesson1C } from "../pages/Lessons/LessonOne";
 
-const lessons = [<Lesson1A />, <Lesson1B />];
+const lessons = [<Lesson1A />, <Lesson1B />, <Lesson1C />];
 
 const LessonContext = createContext();
 

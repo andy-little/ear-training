@@ -1,28 +1,33 @@
 import React from "react";
+import { BsPlayFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
-const Lesson1A = () => {
+const Lesson1B = () => {
     return (
-        <article>
-            <h2>Root, Second & Third</h2>
+        <article className="lesson-slide">
+            <h2 className="lesson-slide-title">Cadences</h2>
             <p>
-                Let’s start with the key of C. The notes belonging to C major
-                are C D E F G A B.
+                A cadence is a sequence of chords comprising the close of a
+                musical phrase.
             </p>
             <p>
-                We are going to start very simply with the first three notes:
-                <br />C = Root
-                <br />D = Major 2nd
-                <br />E = Major 3rd
-                <br />
+                <button className="btn btn-play" aria-label="play cadence">
+                    <div className="svg-wrapper">
+                        <BsPlayFill />
+                    </div>
+                </button>
+                Listen to this example of a cadence.
             </p>
             <p>
-                C, D & E are the note names. You could also describe these notes
-                as being the: the root, major 2nd and major 3rd. The later
-                describes their relationship to the key. Often we shorten these
-                names to root, second & third.
+                We will use cadences in our ear training because their
+                resolution leave us with a strong sence of a key. If you were to
+                hear another note preceding the cadence you would naturally hear
+                that nte in relation to the key of the cadence. We will use this
+                to help us develop our{" "}
+                <Link to="/tutorial">relative pitch</Link>.
             </p>
         </article>
     );
 };
 
-export default Lesson1A;
+export default Lesson1B;

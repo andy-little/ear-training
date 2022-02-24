@@ -1,4 +1,3 @@
-import "./App.scss";
 import Sidebar from "./components/Sidebar/Sidebar";
 import SidebarBtn from "./components/Sidebar/SidebarBtn/SidebarBtn";
 import { Routes, Route } from "react-router-dom";
