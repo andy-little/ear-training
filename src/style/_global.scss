@@ -41,9 +41,12 @@ body {
     }
 }
 
-@media screen and (min-width: 78rem) {
+@media screen and (min-width: 82rem) {
+    //78 prev
     .page-wrapper {
-        transform: translateX(calc(var(--width-sidebar) / 2));
+        transform: translateX(
+            calc(var(--width-sidebar) / 2)
+        ); // width of sidebar is /2 because piano is centered using margin 0 auto
     }
     #root {
         // perhaps not best practice

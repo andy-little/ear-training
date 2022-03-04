@@ -2,7 +2,7 @@ import React from "react";
 
 const Lesson1A = () => {
     return (
-        <article className="lesson-slide">
+       <article className="lesson-slide">
             <h2 className="lesson-slide-title">Root, Second & Third</h2>
             <p>
                 Let’s start with the key of C. The notes belonging to C major
@@ -16,7 +16,7 @@ const Lesson1A = () => {
                     <li>E = Major 3rd</li>
                 </ul>
             </p>
-
+ 
             <p>
                 C, D & E are note names. You could also describe these notes as
                 being the: the root, major 2nd and major 3rd. The latter

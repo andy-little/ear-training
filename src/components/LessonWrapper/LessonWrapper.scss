@@ -1,4 +1,17 @@
+// @media screen and (min-width: 78rem) {
+//     .lesson-wrapper {
+//         transform: translateX(var(--width-sidebar));
+//     }
+//     /* .lesson-grid {
+//         max-width: calc(
+//             97.7vw - var(--width-sidebar)
+//         ); //WARNING 97.7 is a magic number and should be calculated properly
+//     } */
+// }
+
 .lesson-grid {
+    margin: 0 auto;
+    max-width: 60rem;
     padding-top: 6rem;
     padding-bottom: 1rem;
     display: grid;
@@ -9,6 +22,14 @@
         "title   title   progress"
         "l-content l-content l-content"
         "prev    ....... next";
+}
+.progress {
+    grid-area: progress;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: var(--clr-bg-xlight);
+    font-weight: 600;
 }
 
 .lesson-wrapper-prev {

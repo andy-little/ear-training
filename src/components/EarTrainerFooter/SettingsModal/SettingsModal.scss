@@ -1,63 +1,72 @@
+@media screen and (min-width: 82rem) {
+    //78 prev
+    //this undoes the translate being applied to whole page wrapper.
+    // js is setting the position with event listener and css was shifting
+    // with translate in global .page-wrapper
+    .select-notes-modal {
+        transform: translateX(calc(var(--width-sidebar) / -2));
+    }
+}
 .select-notes-modal {
-  z-index: 900;
-  position: absolute;
-  //width: 18.5rem;
-  width: 23rem;
-  max-width: 80%;
-  padding: 1.3em 1.5em;
-  border: 0.1em solid var(--clr-primary);
-  border-radius: var(--border-r);
-  background-color: var(--clr-bg-light);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 200ms linear;
-  &.show {
-    opacity: 1;
-    pointer-events: auto;
-  }
+    z-index: 900;
+    position: absolute;
+    //width: 18.5rem;
+    width: 23rem;
+    max-width: 80%;
+    padding: 1.3em 1.5em;
+    border: 0.1em solid var(--clr-primary);
+    border-radius: var(--border-r);
+    background-color: var(--clr-bg-light);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms linear;
+    &.show {
+        opacity: 1;
+        pointer-events: auto;
+    }
 }
 
 .select-notes-checkboxes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(3.4rem, 1fr));
-  margin-top: 0.7rem;
-  column-gap: 1.2em;
-  row-gap: 1.2em;
-  margin-bottom: 1.2em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(3.4rem, 1fr));
+    margin-top: 0.7rem;
+    column-gap: 1.2em;
+    row-gap: 1.2em;
+    margin-bottom: 1.2em;
 }
 
 .select-notes-btn {
-  &-container {
-    //width: 100%;
-    display: flex;
-    //justify-content: space-around;
-    gap: 1.5em;
-  }
+    &-container {
+        //width: 100%;
+        display: flex;
+        //justify-content: space-around;
+        gap: 1.5em;
+    }
 
-  background-color: var(--clr-tertiary);
-  color: var(--clr-bg);
-  padding: 0.25em 1em;
-  font: inherit;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  text-transform: uppercase;
-  letter-spacing: 0.175em;
-  font-weight: 600;
-  border-radius: var(--border-r);
-  border: none;
-  transition: opacity linear 300ms;
+    background-color: var(--clr-tertiary);
+    color: var(--clr-bg);
+    padding: 0.25em 1em;
+    font: inherit;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    text-transform: uppercase;
+    letter-spacing: 0.175em;
+    font-weight: 600;
+    border-radius: var(--border-r);
+    border: none;
+    transition: opacity linear 300ms;
 
-  &:hover {
-    opacity: 0.75;
-  }
+    &:hover {
+        opacity: 0.75;
+    }
 }
 
 .settings {
-  &-display-names {
-    display: flex;
-    //justify-content: space-between;
-  }
-  &-label {
-    margin: 0 0 0.5rem 0;
-    font-size: clamp(1rem, 2vw, 1.2rem);
-  }
+    &-display-names {
+        display: flex;
+        //justify-content: space-between;
+    }
+    &-label {
+        margin: 0 0 0.5rem 0;
+        font-size: clamp(1rem, 2vw, 1.2rem);
+    }
 }

@@ -11,9 +11,15 @@ export const LessonContextProvider = ({ children }) => {
     const [lesson, setLesson] = useState(lessons[lessonNumber]);
 
     const toggleLesson = (e) => {
-        if (e.target.textContent.toLowerCase() === "next") {
+        if (
+            e.target.textContent.toLowerCase() === "next" &&
+            lessonNumber < lessons.length - 1
+        ) {
             setLessonNumber((prevState) => prevState + 1);
-        } else if (e.target.textContent.toLowerCase() === "prev") {
+        } else if (
+            e.target.textContent.toLowerCase() === "prev" &&
+            lessonNumber > 0
+        ) {
             setLessonNumber((prevState) => prevState - 1);
         } else {
             console.error(
@@ -26,7 +32,14 @@ export const LessonContextProvider = ({ children }) => {
     }, [lessonNumber]);
 
     return (
-        <LessonContext.Provider value={{ lesson, toggleLesson }}>
+        <LessonContext.Provider
+            value={{
+                lesson,
+                toggleLesson,
+                lessonNumber,
+                totalLessons: lessons.length,
+            }}
+        >
             {children}
         </LessonContext.Provider>
     );

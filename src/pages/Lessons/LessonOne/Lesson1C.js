@@ -9,7 +9,7 @@ const Lesson1C = () => {
         //<article className="ear-trainer-container">
         <article className="piano-wrapper">
             <div className="ear-trainer">
-                <EarTrainerHeader />
+                {/* <EarTrainerHeader /> */}
                 <Piano />
                 <EarTrainerFooter />
                 <HelpModal />
